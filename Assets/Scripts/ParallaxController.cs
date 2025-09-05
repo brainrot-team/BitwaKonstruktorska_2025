@@ -1,4 +1,4 @@
-    using AYellowpaper.SerializedCollections;
+using AYellowpaper.SerializedCollections;
 using UnityEngine;
 
 public class ParallaxController : MonoBehaviour 

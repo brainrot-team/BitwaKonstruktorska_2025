@@ -11,12 +11,11 @@ public class CameraMovement : MonoBehaviour
             playerTransform = GameObject.FindWithTag("Player").transform;
         }
     }
-
-    private void Update()
-    {
+    
+    private void Update() {
         transform.position = new Vector3(
-            playerTransform.position.x,
-            playerTransform.position.y,
+            playerTransform.position.x, 
+            playerTransform.position.y, 
             transform.position.z);
     }
 }

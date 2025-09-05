@@ -5,8 +5,9 @@ using UnityEngine.InputSystem;
 public class InputManager : MonoBehaviour
 {
     [Header("Movement Settings")]
-    [SerializeField] float speed = 5f;
-
+    [SerializeField] float maxSpeed = 5f;
+    [SerializeField] float speedDecreasePerAttack = 0.4f;
+    private float currentSpeed;
 
     private AttackController attackController;
 
@@ -18,11 +19,9 @@ public class InputManager : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         inputActions = new InputSystem_Actions();
 
-        inputActions.Player.Move.performed += OnMove;
-        inputActions.Player.Move.canceled  += OnMove;
-
         attackController = GetComponent<AttackController>();
         attackController.SetInputSystemActions(inputActions);
+        attackController.OnNumberOfAttacksChanged.AddListener(ChangePlayerSpeed);
     }
 
     private void OnEnable()
@@ -35,9 +34,16 @@ public class InputManager : MonoBehaviour
         inputActions.Player.Disable();
     }
 
-    public void OnMove(InputAction.CallbackContext context)
+    private void FixedUpdate()
     {
-        Vector2 movementInput = context.ReadValue<Vector2>();
-        rb.linearVelocity = movementInput * speed;
+        Vector2 movementInput = inputActions.Player.Move.ReadValue<Vector2>();
+		rb.AddForce(movementInput * currentSpeed);
+        
+    }
+
+    private void ChangePlayerSpeed(int numberOfRemainingAttacks)
+    {
+        Debug.Log("gowno");
+        currentSpeed = Mathf.Clamp(maxSpeed - numberOfRemainingAttacks * speedDecreasePerAttack, 1, maxSpeed);
     }
 }

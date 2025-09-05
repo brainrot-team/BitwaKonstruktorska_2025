@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 3321042256317008140}
   - component: {fileID: 4520301485344081484}
   - component: {fileID: 5522942492387491934}
-  - component: {fileID: 5524219549899905806}
   - component: {fileID: 9076866303808680592}
   m_Layer: 6
   m_Name: Player
@@ -183,6 +182,8 @@ MonoBehaviour:
   trashDisposer: {fileID: 7771662696445145079}
   maxSpeed: 5
   speedDecreasePerAttack: 0.4
+  startEnergy: 10
+  energyDecreaseInterval: 2
   rb: {fileID: 0}
 --- !u!114 &5522942492387491934
 MonoBehaviour:
@@ -199,19 +200,6 @@ MonoBehaviour:
   aimSprite: {fileID: 6907201088705322334}
   offsetFromPlayer: 1
   attackSpeed: 8
---- !u!114 &5524219549899905806
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2135701575239600984}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ef194acce6463d4a81a9bd552c85305, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  disposeInterval: 0.8
 --- !u!114 &9076866303808680592
 MonoBehaviour:
   m_ObjectHideFlags: 0

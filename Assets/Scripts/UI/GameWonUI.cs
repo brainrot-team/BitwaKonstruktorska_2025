@@ -3,22 +3,16 @@ using UnityEngine.UI;
 
 public class GameWonUI : MonoBehaviour
 {
-    [SerializeField] Button retryButton;
-    [SerializeField] GameObject gameOverPanel;
+    [SerializeField] GameObject gameWonPanel;
 
     void Start()
     {
-        gameOverPanel.SetActive(false);
-        GameManager.OnGameWon.AddListener(ShowGameOver);
-        retryButton.onClick.AddListener(() =>
-        {
-            UnityEngine.SceneManagement.SceneManager.LoadScene(
-                UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
-        });
+        gameWonPanel.SetActive(false);
+        GameManager.OnGameWon.AddListener(ShowGameWon);
     }
     
-    private void ShowGameOver()
+    private void ShowGameWon()
     {
-        gameOverPanel.SetActive(true);
+        gameWonPanel.SetActive(true);
     }
 }

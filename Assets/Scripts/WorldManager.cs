@@ -4,6 +4,7 @@ public class WorldManager : MonoBehaviour
 {
     public static WorldManager Instance;
     
+    public int trashScore = 0;
     
     [SerializeField] public Vector2 WorldBounds = new Vector2(4,4);
 
@@ -29,6 +30,7 @@ public class WorldManager : MonoBehaviour
 
     }
 
+
     // Update is called once per frame
     void Update()
     {
@@ -41,5 +43,10 @@ public class WorldManager : MonoBehaviour
         Debug.DrawLine(new Vector2(xbound, -ybound), new Vector2(-xbound, -ybound), Color.red);
         Debug.DrawLine(new Vector2(-xbound, ybound), new Vector2(-xbound, -ybound), Color.red);
 
+    }
+
+    public void IncreamentTrashScore()
+    {
+        trashScore++;
     }
 }

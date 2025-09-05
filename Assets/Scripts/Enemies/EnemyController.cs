@@ -18,4 +18,10 @@ public class EnemyController : MonoBehaviour
         state.Update();
 
     }
+
+    public void HitByProjectile()
+    {
+        Destroy(gameObject);
+
+    }
 }

@@ -40,4 +40,9 @@ public class InputManager : MonoBehaviour
         Vector2 movementInput = context.ReadValue<Vector2>();
         rb.linearVelocity = movementInput * speed;
     }
+
+    public void HitByProjectile()
+    {
+        print("hit by projectile");
+    }
 }

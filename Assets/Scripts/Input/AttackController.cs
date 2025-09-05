@@ -51,7 +51,7 @@ public class AttackController : MonoBehaviour {
         Vector2 direction = (mouseWorldPos - (Vector2)transform.position).normalized;
         Vector2 startVelocity = direction * attackSpeed;
 
-        ProjectileSpawner.Instance.SpawnTrashProjectile(transform.position, startVelocity);
+        ProjectileSpawner.Instance.SpawnTrashProjectile(transform.position, startVelocity, ProjectileOrigin.Player);
 
         NumberOfRemainingAttacks--;
     }

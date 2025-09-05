@@ -1,13 +1,9 @@
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 public class AttackController : MonoBehaviour
 {
-
-    [HideInInspector] public UnityEvent<int> OnNumberOfAttacksChanged = new UnityEvent<int>();
-
     [Header("Aiming")]
     [SerializeField] private Transform aimSprite;
 
@@ -15,17 +11,6 @@ public class AttackController : MonoBehaviour
     [SerializeField] float offsetFromPlayer = 1f;
     [SerializeField] float attackSpeed = 8f;
 
-    private int numberOfRemainingAttacks = 100;
-    public int NumberOfRemainingAttacks
-    {
-        set
-        {
-            if (numberOfRemainingAttacks <= 0) return;
-            numberOfRemainingAttacks = value;
-            OnNumberOfAttacksChanged.Invoke(numberOfRemainingAttacks);
-        }
-        get => numberOfRemainingAttacks;
-    }
 
     private InputSystem_Actions inputActions;
     private Vector2 mouseWorldPos;
@@ -48,7 +33,7 @@ public class AttackController : MonoBehaviour
 
     public void Attack(InputAction.CallbackContext context)
     {
-        if (numberOfRemainingAttacks <= 0) return;
+        if (PlayerTrash.Instance.CollectedTrash <= 0) return;
         Debug.Log("Attack!");
 
         Vector2 direction = (mouseWorldPos - (Vector2)transform.position).normalized;
@@ -57,7 +42,7 @@ public class AttackController : MonoBehaviour
 
         ProjectileSpawner.Instance.SpawnTrashProjectile(spawnPosition, startVelocity);
 
-        NumberOfRemainingAttacks--;
+        PlayerTrash.Instance.CollectedTrash--;
     }
 
     void OnDrawGizmosSelected()

@@ -21,7 +21,7 @@ public class InputManager : MonoBehaviour
 
         attackController = GetComponent<AttackController>();
         attackController.SetInputSystemActions(inputActions);
-        attackController.OnNumberOfAttacksChanged.AddListener(ChangePlayerSpeed);
+        PlayerTrash.OnNumberOfAttacksChanged.AddListener(ChangePlayerSpeed);
     }
 
     private void OnEnable()

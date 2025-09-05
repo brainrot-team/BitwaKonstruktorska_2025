@@ -16,6 +16,8 @@ public class TrashProjectile : Trash
 
     private bool isLethal = false;
 
+    [SerializeField] private int trashValue = 1;
+
 
     public void TurnToTrash()
     {
@@ -88,13 +90,18 @@ public class TrashProjectile : Trash
         //    if (isPickUpDisabled) return;
         //    Destroy(gameObject);
         //}
+
+
         if (!isPickUpDisabled)
         {
 
             if (collision.collider.TryGetComponent<InputManager>(out InputManager inputManager))
             {
-                Destroy(gameObject);
+                if (PlayerTrash.Instance.AddTrash(trashValue))
+                {
+                    Destroy(gameObject);
 
+                }
             }
         }
 

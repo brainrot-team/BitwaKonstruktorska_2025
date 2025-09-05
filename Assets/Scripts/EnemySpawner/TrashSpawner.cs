@@ -5,6 +5,7 @@ public class TrashSpawner : MonoBehaviour
 {
     [SerializeField] private List<GameObject> TrashPrefab;
     [SerializeField] private float spawnDelay = 5.0f;
+    [SerializeField] private GameObject trashBin;
 
     private float currentTime = 0;
 
@@ -23,5 +24,10 @@ public class TrashSpawner : MonoBehaviour
     {
         int randIndex = Random.Range(0,TrashPrefab.Count);
         GameObject enemy =  Instantiate(TrashPrefab[randIndex], transform.position, Quaternion.identity);
+        if(trashBin != null)
+        {
+            enemy.transform.SetParent(trashBin.transform);
+        }
+        WorldManager.Instance.IncreamentTrashScore();
     }
 }

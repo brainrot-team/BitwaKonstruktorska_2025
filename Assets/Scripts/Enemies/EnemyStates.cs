@@ -15,14 +15,15 @@ public abstract class EnemyState
 
     }
 
-
     public virtual void Update()
     {
 
     }
 
-    
+    public virtual void Exit()
+    {
 
+    }
     
 }
 

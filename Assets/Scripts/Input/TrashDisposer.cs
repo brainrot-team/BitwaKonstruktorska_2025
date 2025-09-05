@@ -1,0 +1,74 @@
+using System.Collections;
+using UnityEngine;
+using UnityEngine.InputSystem;
+
+public class TrashDisposer : MonoBehaviour
+{
+    [SerializeField] private float disposeInterval = 0.8f;
+
+    private InputSystem_Actions inputActions;
+    private Coroutine disposeCoroutine;
+
+    private Dumpster dumpster;
+
+    public void SetInputSystemActions(InputSystem_Actions inputActions)
+    {
+        this.inputActions = inputActions;
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Dumpster"))
+        {
+            if (inputActions == null)
+            {
+                return;
+            }
+            dumpster = collision.GetComponent<Dumpster>();
+            inputActions.Player.Dispose.performed += OnDisposeStarted;
+            inputActions.Player.Dispose.canceled += OnDisposeCanceled;
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Dumpster"))
+        {
+            dumpster = null;
+            inputActions.Player.Dispose.performed -= OnDisposeStarted;
+            inputActions.Player.Dispose.canceled -= OnDisposeCanceled;
+            StopDisposeCoroutine();
+        }
+    }
+
+    private void OnDisposeStarted(InputAction.CallbackContext context)
+    {
+        if (disposeCoroutine == null)
+            disposeCoroutine = StartCoroutine(DisposeRoutine());
+    }
+
+    private void OnDisposeCanceled(InputAction.CallbackContext context)
+    {
+        StopDisposeCoroutine();
+    }
+
+    private IEnumerator DisposeRoutine()
+    {
+        while (true)
+        {
+            Debug.Log("Dispose Trash!");
+            dumpster.ConvertTrashToEnergy();
+
+            yield return new WaitForSeconds(disposeInterval);
+        }
+    }
+
+    private void StopDisposeCoroutine()
+    {
+        if (disposeCoroutine != null)
+        {
+            StopCoroutine(disposeCoroutine);
+            disposeCoroutine = null;
+        }
+    }
+}

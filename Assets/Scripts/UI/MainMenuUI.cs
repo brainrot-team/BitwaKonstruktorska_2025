@@ -15,7 +15,7 @@ public class MainMenuUI : MonoBehaviour
 
         tutorialButton.onClick.AddListener(() => {
             SoundManager.Instance.PlaySound(SoundEffectType.Click);
-            UnityEngine.SceneManagement.SceneManager.LoadScene("TutorialScene");
+            UnityEngine.SceneManagement.SceneManager.LoadScene("ComicsScene");
         });
     }
 

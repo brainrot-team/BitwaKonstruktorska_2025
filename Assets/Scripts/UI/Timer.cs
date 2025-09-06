@@ -3,32 +3,39 @@ using UnityEngine;
 
 public class Timer : MonoBehaviour
 {
-    private float timeLeft;
+    private float timeElapsed;
     private TextMeshProUGUI text;
+    private bool stopped = false;
 
     void Start()
     {
-        timeLeft = GameManager.Instance.GameTime;
+        timeElapsed = 0;
         text = GetComponent<TextMeshProUGUI>();
         UpdateText();
+        GameManager.OnGameOver.AddListener((_) =>
+        {
+            stopped = true;
+        });
+        GameManager.OnGameWon.AddListener(() =>
+        {
+            stopped = true;
+        });
     }
 
     private void Update()
     {
-        if (timeLeft > 0) {
-            timeLeft -= Time.deltaTime;
-            if (timeLeft <= 0) {
-                timeLeft = 0;
-                GameManager.OnGameOver.Invoke("TIME UP!");
-            }
+        if(stopped) return;
+        if (timeElapsed > 0)
+        {
+            timeElapsed += Time.deltaTime;
             UpdateText();
         }
     }
 
     private void UpdateText()
     {
-        int minutes = Mathf.FloorToInt(timeLeft / 60f);
-        int seconds = Mathf.FloorToInt(timeLeft % 60f);
+        int minutes = Mathf.FloorToInt(timeElapsed / 60f);
+        int seconds = Mathf.FloorToInt(timeElapsed % 60f);
         text.text = string.Format("{0:00}:{1:00}", minutes, seconds);
     }
 }

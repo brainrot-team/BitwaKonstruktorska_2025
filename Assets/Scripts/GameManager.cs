@@ -8,9 +8,6 @@ public class GameManager : MonoBehaviour
     public static UnityEvent OnGameWon = new UnityEvent();
     public static UnityEvent<int> OnTrashInWorldChanged = new UnityEvent<int>();
 
-    [SerializeField] float gameTime = 100f;
-    public float GameTime => gameTime;
-
     private int trashInWorld = 0;
     public int TrashInWorld
     {

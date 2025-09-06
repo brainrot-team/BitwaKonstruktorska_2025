@@ -105,5 +105,6 @@ public class InputManager : MonoBehaviour
     public void HitByProjectile()
     {
         print("hit by projectile");
+        PlayerEnergy.Energy -= 5;
     }
 }

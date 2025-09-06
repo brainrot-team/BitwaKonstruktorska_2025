@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4465765738053203049}
   - component: {fileID: 7636563191205007910}
   - component: {fileID: 3654878730848759846}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -117,6 +117,7 @@ MonoBehaviour:
   viewRange: {fileID: 5298932282133742399}
   enemyData: {fileID: 11400000, guid: f64e0ce74a783fd4c8fc5a21475688cf, type: 2}
   lastMultiplayer: 0
+  currentHealth: 0
 --- !u!114 &3654878730848759846
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -135,6 +136,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   shootDistance: 5
+  delayBetween: 0.5
+  bulletsInSerie: 3
+  reloadTime: 1
 --- !u!1 &2881402811299542756
 GameObject:
   m_ObjectHideFlags: 0
@@ -146,7 +150,7 @@ GameObject:
   - component: {fileID: 7233624407626056814}
   - component: {fileID: 6325806553015089678}
   - component: {fileID: 5298932282133742399}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ViewRange
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -227,7 +231,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7201551118666896185}
   - component: {fileID: 6511209638834342964}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -314,7 +318,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4890813732450315685}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ShootPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}

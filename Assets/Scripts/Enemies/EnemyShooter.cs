@@ -62,6 +62,7 @@ public class EnemyShooter : MonoBehaviour
             if(hit.collider.gameObject == WorldManager.Instance.playerObject && !canShoot)
             {
                 canShoot = true;
+                SpawnProjectile();
                 
             }
         }
@@ -71,6 +72,7 @@ public class EnemyShooter : MonoBehaviour
     {
         currentTimeAfterShoot = 0;
         GameObject trashObject = Instantiate(trashBullet, shootPoint.position, transform.rotation);
+        trashObject.GetComponent<Rigidbody2D>().linearVelocity = transform.right * 5;
         trashObject.GetComponent<TrashProjectile>().ShootProjectile(ProjectileOrigin.Enemy);
         shots++;
     }

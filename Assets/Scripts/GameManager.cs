@@ -4,7 +4,7 @@ using UnityEngine.Events;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
-    public static UnityEvent OnGameOver = new UnityEvent();
+    public static UnityEvent<string> OnGameOver = new UnityEvent<string>();
     public static UnityEvent OnGameWon = new UnityEvent();
     public static UnityEvent<int> OnTrashInWorldChanged = new UnityEvent<int>();
 
@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
         {
             trashInWorld = value;
             OnTrashInWorldChanged.Invoke(trashInWorld);
-            if(trashInWorld <= 0)
+            if (trashInWorld <= 0)
             {
                 OnGameWon.Invoke();
             }
@@ -37,6 +37,15 @@ public class GameManager : MonoBehaviour
             Instance = this;
         }
         DontDestroyOnLoad(this);
+
+        OnGameOver.AddListener((_) => Time.timeScale = 0f);
+        OnGameWon.AddListener(() => Time.timeScale = 0f);
     }
-    
+
+    public void ResetGame()
+    {
+        Time.timeScale = 1f;
+        trashInWorld = 0;
+        OnTrashInWorldChanged.Invoke(trashInWorld);
+    }
 }

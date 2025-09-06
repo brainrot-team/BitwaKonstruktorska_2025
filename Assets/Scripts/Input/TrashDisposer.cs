@@ -1,5 +1,4 @@
 using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -22,7 +21,7 @@ public class TrashDisposer : MonoBehaviour
         if (collision.CompareTag("Dumpster"))
         {
             dumpster = collision.GetComponent<Dumpster>();
-            
+            dumpster.OnPlayerEnter();
         }
     }
 
@@ -30,6 +29,7 @@ public class TrashDisposer : MonoBehaviour
     {
         if (collision.CompareTag("Dumpster"))
         {
+            dumpster.OnPlayerExit();
             dumpster = null;
             StopDisposeCoroutine();
         }

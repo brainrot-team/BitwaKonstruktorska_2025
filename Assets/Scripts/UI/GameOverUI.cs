@@ -1,10 +1,15 @@
+using TMPro;
 using UnityEngine;
+using UnityEngine.Android;
 using UnityEngine.UI;
 
 public class GameOverUI : MonoBehaviour
 {
-    [SerializeField] Button retryButton;
     [SerializeField] GameObject gameOverPanel;
+
+    [SerializeField] TextMeshProUGUI reasonText;
+    [SerializeField] Button retryButton;
+    [SerializeField] Button mainMenuButton;
 
     void Start()
     {
@@ -15,10 +20,15 @@ public class GameOverUI : MonoBehaviour
             UnityEngine.SceneManagement.SceneManager.LoadScene(
                 UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
         });
+        mainMenuButton.onClick.AddListener(() =>
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
+        });
     }
-    
-    private void ShowGameOver()
+
+    private void ShowGameOver(string reason)
     {
         gameOverPanel.SetActive(true);
+        reasonText.text = reason;
     }
 }

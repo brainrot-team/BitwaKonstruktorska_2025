@@ -19,7 +19,7 @@ public class Timer : MonoBehaviour
             timeLeft -= Time.deltaTime;
             if (timeLeft <= 0) {
                 timeLeft = 0;
-                GameManager.OnGameOver.Invoke();
+                GameManager.OnGameOver.Invoke("TIME UP!");
             }
             UpdateText();
         }

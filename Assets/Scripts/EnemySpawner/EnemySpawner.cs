@@ -3,12 +3,21 @@ using System.Collections.Generic;
 
 public class EnemySpawner : MonoBehaviour
 {
+    [SerializeField] private int spawnOnStart = 0;
     [SerializeField] private List<GameObject> enemyPrefab;
     [SerializeField] private float spawnDelay = 5.0f;
     [SerializeField] private int enemyMaxNumber = 3;
 
     [SerializeField] private List<GameObject> spawnedEnemies = new List<GameObject>();
     private float currentTime = 0;
+
+    void Start()
+    {
+        for(int i=0;i<spawnOnStart;i++)
+        {
+            Spawn();
+        }
+    }
 
     void Update()
     {

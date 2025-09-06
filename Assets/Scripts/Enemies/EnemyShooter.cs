@@ -88,6 +88,7 @@ public class EnemyShooter : MonoBehaviour
 
     private void SpawnProjectile()
     {
+        SoundManager.Instance?.PlaySound(SoundEffectType.EnemyShoot);
         currentTimeAfterShoot = 0;
         GameObject trashObject = TrashPrefabHolder.Instance.getRandomTrash();
         trashObject.transform.SetPositionAndRotation(shootPoint.position, transform.rotation);

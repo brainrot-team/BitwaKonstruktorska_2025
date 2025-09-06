@@ -55,7 +55,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -121,10 +121,10 @@ TextureImporter:
       name: thrash_animation_ready-4fde_0
       rect:
         serializedVersion: 2
-        x: 20
-        y: 15
-        width: 25
-        height: 34
+        x: 0
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,10 +143,10 @@ TextureImporter:
       name: thrash_animation_ready-4fde_1
       rect:
         serializedVersion: 2
-        x: 87
-        y: 15
-        width: 17
-        height: 34
+        x: 64
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -165,10 +165,10 @@ TextureImporter:
       name: thrash_animation_ready-4fde_2
       rect:
         serializedVersion: 2
-        x: 155
-        y: 15
-        width: 11
-        height: 34
+        x: 128
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,10 +187,10 @@ TextureImporter:
       name: thrash_animation_ready-4fde_3
       rect:
         serializedVersion: 2
-        x: 214
-        y: 15
-        width: 20
-        height: 34
+        x: 192
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -209,10 +209,10 @@ TextureImporter:
       name: thrash_animation_ready-4fde_4
       rect:
         serializedVersion: 2
-        x: 274
-        y: 15
-        width: 27
-        height: 34
+        x: 256
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -231,10 +231,10 @@ TextureImporter:
       name: thrash_animation_ready-4fde_5
       rect:
         serializedVersion: 2
-        x: 343
-        y: 15
-        width: 15
-        height: 34
+        x: 320
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -253,10 +253,10 @@ TextureImporter:
       name: thrash_animation_ready-4fde_6
       rect:
         serializedVersion: 2
-        x: 409
-        y: 15
-        width: 11
-        height: 34
+        x: 384
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -275,7 +275,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: decd8bc021a963a4b992f914f9e7c50f
     internalID: 0
     vertices: []
     indices: 

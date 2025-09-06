@@ -52,7 +52,8 @@ public class EnemyController : MonoBehaviour
 
     public void HitByProjectile()
     {
-        print("YOU are hit");
+        
+        FlashOnDamage();
         currentHealth--;
         if (currentHealth <= 0)
         {
@@ -65,7 +66,7 @@ public class EnemyController : MonoBehaviour
     private void SpawnProjectileOnDeath()
     {
 
-        print("YOU ARE DEAD");
+        
 
         WorldManager.Instance.TrashScore++;
         for(int i =0;i<enemyData.maxHP +1;i++)

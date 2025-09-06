@@ -22,6 +22,7 @@ public class ProjectileSpawner : MonoBehaviour
 
     public void SpawnTrashProjectile(Vector2 trashPosition, Vector2 startVelocity, ProjectileOrigin origin)
     {
+        print("AAAAAAAAAAAAAAAAAAAAAAAAAAA");
         var projectile = Instantiate(projectilePrefab, trashPosition, Quaternion.identity);
         TrashProjectile trashProjectile = projectile.GetComponent<TrashProjectile>();
         trashProjectile.ShootProjectile(origin);

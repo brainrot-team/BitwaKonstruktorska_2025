@@ -6,6 +6,7 @@ public class TrashPrefabHolder : MonoBehaviour
 {
     [SerializeField] List<AnimationClip> animations = new List<AnimationClip> ();
     [SerializeField] GameObject trashPrefab;
+    public GameObject fireEffect;
 
     public static TrashPrefabHolder Instance { get; private set; }
 

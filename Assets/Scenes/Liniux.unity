@@ -286,7 +286,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerObject: {fileID: 1347757743}
-  trashScore: 0
   startingTrash: 50
   WorldBounds: {x: 20, y: 20}
   allTrash: []
@@ -752,6 +751,10 @@ PrefabInstance:
       value: TrashPrefabHolder
       objectReference: {fileID: 0}
     - target: {fileID: 6992512503238253659, guid: 2b206e09e3d28f54996c818cac40ec41, type: 3}
+      propertyPath: fireEffect
+      value: 
+      objectReference: {fileID: 8279535714651398592, guid: 62c8d49c1038b5a45a325ec05bb9a494, type: 3}
+    - target: {fileID: 6992512503238253659, guid: 2b206e09e3d28f54996c818cac40ec41, type: 3}
       propertyPath: trashPrefab
       value: 
       objectReference: {fileID: 274015628455755120, guid: 06a2934e73cc6ed4ea81ba8555fc0ec0, type: 3}
@@ -973,3 +976,4 @@ SceneRoots:
   - {fileID: 162166689}
   - {fileID: 54727332933487835}
   - {fileID: 123737750}
+  - {fileID: 62789147}

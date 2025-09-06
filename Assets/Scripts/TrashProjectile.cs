@@ -1,4 +1,5 @@
 
+using Unity.VisualScripting;
 using UnityEngine;
 
 public enum ProjectileOrigin
@@ -13,6 +14,7 @@ public class TrashProjectile : Trash
     
     private Rigidbody2D rb;
     private SpriteRenderer spriteRenderer;
+    private GameObject effect = null;
 
     private bool isLethal = false;
 
@@ -48,6 +50,9 @@ public class TrashProjectile : Trash
                 tag = "PlayerProjectile";
                 targetLayer = LayerMask.NameToLayer("Enemy");
                 rb.excludeLayers = 64;
+                effect = Instantiate(TrashPrefabHolder.Instance.fireEffect);
+                
+
                 break;
             case ProjectileOrigin.Enemy:
                 tag = "EnemyProjectile";
@@ -86,6 +91,8 @@ public class TrashProjectile : Trash
     {
         rb.linearDamping = rb.linearDamping * 2;
         spriteRenderer.color = Color.yellow;
+
+        Destroy(effect);
 
         isLethal = false;
         rb.excludeLayers = 0;

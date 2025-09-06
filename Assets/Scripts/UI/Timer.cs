@@ -4,13 +4,12 @@ using UnityEngine;
 public class Timer : MonoBehaviour
 {
     private float timeElapsed;
-    private TextMeshProUGUI text;
+    [SerializeField] TextMeshProUGUI minutesText, secondsText;
     private bool stopped = false;
 
     void Start()
     {
         timeElapsed = 0;
-        text = GetComponent<TextMeshProUGUI>();
         UpdateText();
         GameManager.OnGameOver.AddListener((_) =>
         {
@@ -25,17 +24,17 @@ public class Timer : MonoBehaviour
     private void Update()
     {
         if(stopped) return;
-        if (timeElapsed > 0)
-        {
-            timeElapsed += Time.deltaTime;
-            UpdateText();
-        }
+        timeElapsed += Time.deltaTime;
+        UpdateText();
     }
 
     private void UpdateText()
     {
         int minutes = Mathf.FloorToInt(timeElapsed / 60f);
         int seconds = Mathf.FloorToInt(timeElapsed % 60f);
-        text.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+
+        minutesText.text = minutes.ToString("00");
+        secondsText.text = seconds.ToString("00");
+
     }
 }

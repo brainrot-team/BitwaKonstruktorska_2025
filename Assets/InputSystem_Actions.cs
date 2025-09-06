@@ -107,6 +107,15 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Skip"",
+                    ""type"": ""Button"",
+                    ""id"": ""5aad58cf-3f0d-4eca-b56d-2eff7051870b"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -481,6 +490,17 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": "";Keyboard&Mouse"",
                     ""action"": ""Dispose"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2ea26d23-2326-4118-933b-72a7d8de98b8"",
+                    ""path"": ""<Keyboard>/x"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Skip"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1077,6 +1097,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         m_Player_Next = m_Player.FindAction("Next", throwIfNotFound: true);
         m_Player_Sprint = m_Player.FindAction("Sprint", throwIfNotFound: true);
         m_Player_Dispose = m_Player.FindAction("Dispose", throwIfNotFound: true);
+        m_Player_Skip = m_Player.FindAction("Skip", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1165,6 +1186,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Next;
     private readonly InputAction m_Player_Sprint;
     private readonly InputAction m_Player_Dispose;
+    private readonly InputAction m_Player_Skip;
     public struct PlayerActions
     {
         private @InputSystem_Actions m_Wrapper;
@@ -1178,6 +1200,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         public InputAction @Next => m_Wrapper.m_Player_Next;
         public InputAction @Sprint => m_Wrapper.m_Player_Sprint;
         public InputAction @Dispose => m_Wrapper.m_Player_Dispose;
+        public InputAction @Skip => m_Wrapper.m_Player_Skip;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1214,6 +1237,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @Dispose.started += instance.OnDispose;
             @Dispose.performed += instance.OnDispose;
             @Dispose.canceled += instance.OnDispose;
+            @Skip.started += instance.OnSkip;
+            @Skip.performed += instance.OnSkip;
+            @Skip.canceled += instance.OnSkip;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -1245,6 +1271,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @Dispose.started -= instance.OnDispose;
             @Dispose.performed -= instance.OnDispose;
             @Dispose.canceled -= instance.OnDispose;
+            @Skip.started -= instance.OnSkip;
+            @Skip.performed -= instance.OnSkip;
+            @Skip.canceled -= instance.OnSkip;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -1436,6 +1465,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         void OnNext(InputAction.CallbackContext context);
         void OnSprint(InputAction.CallbackContext context);
         void OnDispose(InputAction.CallbackContext context);
+        void OnSkip(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

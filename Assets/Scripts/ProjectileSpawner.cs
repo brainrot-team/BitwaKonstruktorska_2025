@@ -22,7 +22,7 @@ public class ProjectileSpawner : MonoBehaviour
 
     public void SpawnTrashProjectile(Vector2 trashPosition, Vector2 startVelocity, ProjectileOrigin origin,Transform targetTransorm)
     {
-        
+         
         var projectile = TrashPrefabHolder.Instance.getRandomTrash();
             
          projectile.transform.SetPositionAndRotation(trashPosition, Quaternion.identity);

@@ -68,6 +68,8 @@ public class WorldManager : MonoBehaviour
 
         }
 
+        trashScore += playerObject.GetComponent<PlayerTrash>().CollectedTrash;
+
 
     }
 

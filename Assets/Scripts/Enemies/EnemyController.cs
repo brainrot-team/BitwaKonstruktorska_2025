@@ -49,4 +49,10 @@ public class EnemyController : MonoBehaviour
             Destroy(gameObject);
 
     }
+
+    private void SpawnProjectileOnDeath()
+    {
+
+
+    }
 }

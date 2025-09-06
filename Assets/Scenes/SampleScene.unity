@@ -799,7 +799,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 384933118}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: borderCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -819,7 +819,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 402237069}
   - {fileID: 1754210242}
   - {fileID: 722069276}
   - {fileID: 1823917672}
@@ -1508,7 +1507,7 @@ GameObject:
   m_Component:
   - component: {fileID: 722069276}
   - component: {fileID: 722069275}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BoxCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2651,7 +2650,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1754210242}
   - component: {fileID: 1754210243}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BoxCollider (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2794,7 +2793,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1823917672}
   - component: {fileID: 1823917673}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BoxCollider (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3592,7 +3591,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6940402483830601086, guid: 2b0e8e0b2f846784a8e2a659c72e1604, type: 3}
       propertyPath: m_NormalizedViewPortRect.height
-      value: 1
+      value: 0.99986756
       objectReference: {fileID: 0}
     - target: {fileID: 7844339909549165318, guid: 2b0e8e0b2f846784a8e2a659c72e1604, type: 3}
       propertyPath: m_Name
@@ -3767,4 +3766,4 @@ SceneRoots:
   - {fileID: 621605977}
   - {fileID: 1782333305}
   - {fileID: 374689532}
-  - {fileID: 303102049}
+  - {fileID: 384933118}

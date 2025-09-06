@@ -210,7 +210,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      nakladka-enemyt_0: -6667516599447057178
+      nakladka-enemyt_1: 5186256117395648112
+      nakladka-enemyt_2: -1794719076860534566
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

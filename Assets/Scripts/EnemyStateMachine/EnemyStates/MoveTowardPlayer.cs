@@ -36,19 +36,29 @@ public class MoveTowardPlayer : State
         base.UpdatePhysics();
         Vector3 targetPoint = WorldManager.Instance.GetPlayerPosition();
 
-        float angle = Vector2.Angle(transform.right,targetPoint - transform.position);
+        float angleBetweenTarget = Vector2.Angle(transform.right,targetPoint - transform.position);
         
         float multiplayer = 0.0f;
-        if(angle > 2.0f)
+
+        if(angleBetweenTarget > 2.0f)
         {
             multiplayer = -1.0f;
         }
-        else if(angle < -2.0f)
+        else if(angleBetweenTarget < -2.0f)
         {
             multiplayer = 1.0f;
         }
 
+        float angle = transform.rotation.eulerAngles.z + (multiplayer *  enemy.enemyData.backAngleSpeed + Time.deltaTime);
+        transform.rotation = Quaternion.Euler(0,0,angle);
+
         rb.MovePosition(transform.position + (transform.right * Time.deltaTime * enemy.enemyData.attackSpeed));
+
+        if(enemy.viewRange.GetDistanceToPlayer(transform.position) < enemy.enemyData.minAttackDistance)
+        {
+            enemy.stateMachine.Change(enemy.states.EscapeState);
+            return;
+        }
         
 
 	}

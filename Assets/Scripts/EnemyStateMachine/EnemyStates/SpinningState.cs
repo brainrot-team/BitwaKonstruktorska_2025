@@ -5,8 +5,6 @@ public class SpinningState : State
     Vector2 targetPosition;
     Transform transform;
     Rigidbody2D rb;
-    float speed = 10;
-
 
     private Vector3 startingPosition;
 
@@ -39,19 +37,21 @@ public class SpinningState : State
 	public override void UpdateLogic() 
 	{
         base.UpdateLogic();
+
+        if(enemy.viewRange.GetEnemyDetected())
+        {
+            enemy.stateMachine.Change(enemy.states.RotateToPlayerState);
+            return;
+        }
+        if(!WorldManager.Instance.IsInBox(transform.position))
+        {
+            enemy.stateMachine.Change(enemy.states.ToCenterState);
+            return;
+        }
+
         currentTime += Time.deltaTime;
         if(currentTime > maxTime)
         {
-            if(enemy.viewRange.GetEnemyDetected())
-            {
-                enemy.stateMachine.Change(enemy.states.RotateToPlayerState);
-                return;
-            }
-            if(!WorldManager.Instance.IsInBox(transform.position))
-            {
-                enemy.stateMachine.Change(enemy.states.ToCenterState);
-                return;
-            }
             enemy.stateMachine.Change(enemy.states.ForwardState);
             return;
         }

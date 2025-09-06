@@ -1,21 +1,17 @@
 using UnityEngine;
 
-public class ToCenterState : State
+public class EscapeState : State
 {
     Vector2 targetPosition;
     Transform transform;
     Rigidbody2D rb;
-
-
-    private Vector3 startingPosition;
-    private Vector3 circleCenter;
 
     private Vector3 targetPoint;
 
     private int multiplayer;
 
 
-    public ToCenterState(EnemyController enemy, StateMachine stateMachine) : base(enemy, stateMachine) { }
+    public EscapeState(EnemyController enemy, StateMachine stateMachine) : base(enemy, stateMachine) { }
 
     public override void Enter() 
 	{ 
@@ -23,14 +19,7 @@ public class ToCenterState : State
 		transform = enemy.enemyGameObject.transform;
         rb = enemy.rb;
 
-        if(enemy.viewRange.GetEnemyDetected() && WorldManager.Instance.IsInBox(WorldManager.Instance.GetPlayerPosition()))
-        {
-            targetPoint = WorldManager.Instance.GetPlayerPosition();
-        }
-        else
-        {
-            targetPoint = WorldManager.Instance.GetRandomPointInBox();
-        }
+        targetPoint = WorldManager.Instance.GetPlayerPosition();
 
         if(enemy.lastMultiplayer == 0)
         {
@@ -61,11 +50,12 @@ public class ToCenterState : State
         transform.rotation = Quaternion.Euler(0,0,angle);
         rb.MovePosition(transform.position + (transform.right * Time.deltaTime * enemy.enemyData.speed));
 
-        if(Vector2.Angle(transform.right,targetPoint - transform.position) < 2.0f)
+        if(Vector2.Angle(transform.right,targetPoint - transform.position) < -160f || Vector2.Angle(transform.right,targetPoint - transform.position) > 160)
         {
-            if(enemy.viewRange.GetEnemyDetected() && WorldManager.Instance.IsInBox(WorldManager.Instance.GetPlayerPosition()))
+            if(enemy.viewRange.GetEnemyDetected())
             {
                 enemy.stateMachine.Change(enemy.states.MoveTowardPlayer);
+                return;
             }
             enemy.stateMachine.Change(enemy.states.ForwardState);
             return;   

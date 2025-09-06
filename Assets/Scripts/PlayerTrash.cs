@@ -13,15 +13,16 @@ public class PlayerTrash : MonoBehaviour
     }
     
     
-    private int collectedTrash = 20;
+    [SerializeField] private int collectedTrash = 5;
     [SerializeField] private int maxTrashCapacity = 200;
 
     public int CollectedTrash
     {
         set
         {
-            if (collectedTrash <= 0) return;
+            
             collectedTrash = value;
+            collectedTrash = Mathf.Clamp(collectedTrash, 0, int.MaxValue);
             OnNumberOfAttacksChanged.Invoke(collectedTrash);
 
         }

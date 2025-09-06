@@ -28,9 +28,12 @@ public class SoundManager : MonoBehaviour
         if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
-            return;
         }
-        Instance = this;
+        else
+        {
+            Instance = this;
+        }
+        DontDestroyOnLoad(this);
     }
     
     public void PlaySound(SoundEffectType soundEffectType)

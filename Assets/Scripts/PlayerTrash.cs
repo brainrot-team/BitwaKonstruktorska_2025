@@ -34,7 +34,6 @@ public class PlayerTrash : MonoBehaviour
         if(CollectedTrash + trashToAdd <= maxTrashCapacity)
         {
             CollectedTrash += trashToAdd;
-            print("new trash ammount " + collectedTrash);
             SoundManager.Instance.PlaySound3(SoundEffectType.PickUp);
             return true;
         }

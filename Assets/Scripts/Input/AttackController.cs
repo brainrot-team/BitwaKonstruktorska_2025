@@ -34,7 +34,6 @@ public class AttackController : MonoBehaviour
     public void Attack(InputAction.CallbackContext context)
     {
         if (PlayerTrash.Instance.CollectedTrash <= 0) return;
-        Debug.Log("Attack!");
 
         Vector2 direction = (mouseWorldPos - (Vector2)transform.position).normalized;
         Vector2 startVelocity = direction * attackSpeed;

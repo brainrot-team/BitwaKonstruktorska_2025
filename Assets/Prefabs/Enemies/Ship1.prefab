@@ -140,8 +140,8 @@ MonoBehaviour:
   delayBetween: 0.5
   bulletsInSerie: 1
   reloadTime: 1
-  minDelay: 10
-  maxDelay: 15
+  minDelay: 60
+  maxDelay: 90
 --- !u!95 &5355793776990773046
 Animator:
   serializedVersion: 7

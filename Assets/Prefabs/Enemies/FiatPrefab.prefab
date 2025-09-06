@@ -221,8 +221,8 @@ MonoBehaviour:
   delayBetween: 1
   bulletsInSerie: 1
   reloadTime: 2
-  minDelay: 10
-  maxDelay: 30
+  minDelay: 60
+  maxDelay: 90
   shootPoint1: {fileID: 3201460850716468188}
   shootPoint2: {fileID: 7774741782492481926}
   shootPoint3: {fileID: 4815671350714012707}

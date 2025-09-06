@@ -9,6 +9,7 @@ public class EnergyUI : MonoBehaviour
     private void Start()
     {
         PlayerEnergy.OnEnergyChanged.AddListener(UpdateEnergyUI);
+        UpdateEnergyUI(PlayerEnergy.Energy);
     }
     
     private void UpdateEnergyUI(int newEnergy)

@@ -183,8 +183,8 @@ MonoBehaviour:
   trashDisposer: {fileID: 7771662696445145079}
   maxSpeed: 30
   speedDecreasePerAttack: 0.6
-  startEnergy: 50
-  energyDecreaseInterval: 0.8
+  startEnergy: 75
+  energyDecreaseInterval: 1
   rb: {fileID: 0}
 --- !u!114 &5522942492387491934
 MonoBehaviour:

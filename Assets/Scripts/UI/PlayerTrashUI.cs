@@ -12,6 +12,6 @@ public class PlayerTrashUI : MonoBehaviour
     
     private void UpdateTrashUI(int newTrash)
     {
-        text.text = $"Trash: {newTrash}";
+        text.text = $"TRASH: {newTrash}";
     }
 }

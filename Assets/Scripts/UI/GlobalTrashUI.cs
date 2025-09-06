@@ -13,6 +13,6 @@ public class GlobalTrashUI : MonoBehaviour
 
     private void UpdateTrashUI(int newTrash)
     {
-        text.text = $"Global Trash: {newTrash}";
+        text.text = $"GLOBAL TRASH: {newTrash}";
     }
 }

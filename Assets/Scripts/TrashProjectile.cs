@@ -51,6 +51,7 @@ public class TrashProjectile : Trash
                 targetLayer = LayerMask.NameToLayer("Enemy");
                 rb.excludeLayers = 64;
                 effect = Instantiate(TrashPrefabHolder.Instance.fireEffect);
+                effect.transform.parent = transform;
                 
 
                 break;

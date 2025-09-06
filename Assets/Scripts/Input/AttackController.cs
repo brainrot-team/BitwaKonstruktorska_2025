@@ -40,7 +40,7 @@ public class AttackController : MonoBehaviour
         Vector2 startVelocity = direction * attackSpeed;
         Vector2 spawnPosition = (Vector2)transform.position + direction * offsetFromPlayer;
 
-        ProjectileSpawner.Instance.SpawnTrashProjectile(spawnPosition, startVelocity);
+        ProjectileSpawner.Instance.SpawnTrashProjectile(spawnPosition, startVelocity,ProjectileOrigin.Player);
 
         PlayerTrash.Instance.CollectedTrash--;
     }

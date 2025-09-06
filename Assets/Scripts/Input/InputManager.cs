@@ -82,7 +82,7 @@ public class InputManager : MonoBehaviour
             PlayerEnergy.Energy--;
             if (PlayerEnergy.Energy <= 0)
             {
-                Debug.Log("Game Over!");
+                GameManager.OnGameOver.Invoke();
             }
             yield return new WaitForSeconds(energyDecreaseInterval);
         }
@@ -96,5 +96,10 @@ public class InputManager : MonoBehaviour
             StopCoroutine(energyDepletionCoroutine);
             energyDepletionCoroutine = null;
         }
+    }
+
+    public void HitByProjectile()
+    {
+        print("hit by projectile");
     }
 }

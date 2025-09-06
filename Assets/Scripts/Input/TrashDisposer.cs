@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -20,13 +21,8 @@ public class TrashDisposer : MonoBehaviour
     {
         if (collision.CompareTag("Dumpster"))
         {
-            if (inputActions == null)
-            {
-                return;
-            }
             dumpster = collision.GetComponent<Dumpster>();
-            inputActions.Player.Dispose.performed += OnDisposeStarted;
-            inputActions.Player.Dispose.canceled += OnDisposeCanceled;
+            
         }
     }
 
@@ -35,14 +31,21 @@ public class TrashDisposer : MonoBehaviour
         if (collision.CompareTag("Dumpster"))
         {
             dumpster = null;
-            inputActions.Player.Dispose.performed -= OnDisposeStarted;
-            inputActions.Player.Dispose.canceled -= OnDisposeCanceled;
             StopDisposeCoroutine();
         }
     }
 
+    private void Start()
+    {
+        inputActions.Player.Dispose.performed += OnDisposeStarted;
+        inputActions.Player.Dispose.canceled += OnDisposeCanceled;
+    }
+
     private void OnDisposeStarted(InputAction.CallbackContext context)
     {
+        if (dumpster == null)
+            return;
+
         if (disposeCoroutine == null)
             disposeCoroutine = StartCoroutine(DisposeRoutine());
     }

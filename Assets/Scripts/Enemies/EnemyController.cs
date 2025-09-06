@@ -35,4 +35,10 @@ public class EnemyController : MonoBehaviour
     {
         stateMachine.currentState.UpdatePhysics();
     }
+
+    public void HitByProjectile()
+    {
+        Destroy(gameObject);
+
+    }
 }

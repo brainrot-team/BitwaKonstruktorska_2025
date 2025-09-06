@@ -1,18 +1,18 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnergyUI : MonoBehaviour
 {
-    private TextMeshProUGUI text;
+    [SerializeField] Image sliderImage;
 
     private void Start()
     {
-        text = GetComponent<TextMeshProUGUI>();
         PlayerEnergy.OnEnergyChanged.AddListener(UpdateEnergyUI);
     }
     
     private void UpdateEnergyUI(int newEnergy)
     {
-        text.text = $"Energy: {newEnergy}";
+        sliderImage.fillAmount = newEnergy / (float)PlayerEnergy.MaxEnergy;
     }
 }

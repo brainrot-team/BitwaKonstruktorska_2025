@@ -38,13 +38,14 @@ public class MoveTowardPlayer : State
 
         float angle = Vector2.Angle(transform.right,targetPoint - transform.position);
         
+        float multiplayer = 0.0f;
         if(angle > 2.0f)
         {
-            multiplayer = 1.0f;
+            multiplayer = -1.0f;
         }
         else if(angle < -2.0f)
         {
-
+            multiplayer = 1.0f;
         }
 
         rb.MovePosition(transform.position + (transform.right * Time.deltaTime * enemy.enemyData.attackSpeed));

@@ -10,7 +10,6 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private List<GameObject> spawnedEnemies = new List<GameObject>();
     private float currentTime = 0;
 
-    // Update is called once per frame
     void Update()
     {
         currentTime += Time.deltaTime;

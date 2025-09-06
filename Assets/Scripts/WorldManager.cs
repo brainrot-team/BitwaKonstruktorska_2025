@@ -49,4 +49,16 @@ public class WorldManager : MonoBehaviour
     {
         trashScore++;
     }
+
+    public bool IsInBox(Vector3 point)
+    {
+        return WorldBounds.x > point.x && -WorldBounds.x < point.x &&
+                WorldBounds.y > point.y && -WorldBounds.y < point.y;
+    }
+
+    public Vector3 GetRandomPointInBox()
+    {
+        return new Vector3(Random.Range(-WorldBounds.x,WorldBounds.x),Random.Range(-WorldBounds.y,WorldBounds.y),0); 
+    }
+
 }

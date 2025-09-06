@@ -52,6 +52,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: TrashProjectile
       objectReference: {fileID: 0}
+    - target: {fileID: 7525169077228304392, guid: 79d71449b8706a345b4c8078b48505b3, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1.3625
+      objectReference: {fileID: 0}
+    - target: {fileID: 7525169077228304392, guid: 79d71449b8706a345b4c8078b48505b3, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1.285
+      objectReference: {fileID: 0}
+    - target: {fileID: 8814883042963491682, guid: 79d71449b8706a345b4c8078b48505b3, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 7110261069087551284, guid: ac8b7013781530d41afe6145ad48903f, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -77,6 +89,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37098d7b335e2cf438dc3b8ac1c46232, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetLayer:
-    serializedVersion: 2
-    m_Bits: 0

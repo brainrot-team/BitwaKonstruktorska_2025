@@ -7730,7 +7730,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraTransform: {fileID: 1625011334}
-  StrengthMultiplier: 1
+  StrengthMultiplier: 0.396
 --- !u!4 &1238125790 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7480845542250498850, guid: f16b039e29d7061478685d217664e3d8, type: 3}

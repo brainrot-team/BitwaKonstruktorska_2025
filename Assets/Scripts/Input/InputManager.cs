@@ -105,6 +105,7 @@ public class InputManager : MonoBehaviour
     public void HitByProjectile()
     {
         print("hit by projectile");
+        PerformShake.instance.TriggerShake(transform.position);
         PlayerEnergy.Energy -= 5;
     }
 }

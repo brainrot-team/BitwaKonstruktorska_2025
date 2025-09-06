@@ -54,10 +54,10 @@ public class ToCenterState : State
         transform.rotation = Quaternion.Euler(0,0,angle);
         rb.MovePosition(transform.position + (transform.right * Time.deltaTime * enemy.enemyData.speed));
 
-        if(Vector2.Angle(transform.right,targetPoint - transform.position) < 2.0f)
-        {
-            enemy.stateMachine.Change(enemy.states.ForwardState);
-            return;   
-        }
+        //if(Vector2.Angle(transform.right,targetPoint - transform.position) < 2.0f)
+        //{
+        //    enemy.stateMachine.Change(enemy.states.ForwardState);
+        //    return;   
+        //}
 	}
 }

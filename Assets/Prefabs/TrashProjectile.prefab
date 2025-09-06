@@ -50,7 +50,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4701766195332400518, guid: 79d71449b8706a345b4c8078b48505b3, type: 3}
       propertyPath: m_ExcludeLayers.m_Bits
-      value: 64
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4701766195332400518, guid: 79d71449b8706a345b4c8078b48505b3, type: 3}
       propertyPath: m_IncludeLayers.m_Bits
@@ -97,3 +97,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37098d7b335e2cf438dc3b8ac1c46232, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  trashValue: 1

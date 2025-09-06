@@ -32,10 +32,12 @@ public class TrashProjectile : Trash
             case ProjectileOrigin.Player:
                 tag = "PlayerProjectile";
                 targetLayer = LayerMask.NameToLayer("Enemy");
+                rb.excludeLayers = LayerMask.NameToLayer("Player");
                 break;
             case ProjectileOrigin.Enemy:
                 tag = "EnemyProjectile";
                 targetLayer = LayerMask.NameToLayer("Player");
+                rb.excludeLayers = LayerMask.NameToLayer("Enemy");
                 break;
             default:
                 Debug.LogError("Unknown ProjectileOrigin: " + origin);
@@ -95,7 +97,7 @@ public class TrashProjectile : Trash
         if (!isPickUpDisabled)
         {
 
-            if (collision.collider.TryGetComponent<InputManager>(out InputManager inputManager))
+            if (collision.collider.TryGetComponent<PlayerTrash>(out PlayerTrash inputManager))
             {
                 if (PlayerTrash.Instance.AddTrash(trashValue))
                 {

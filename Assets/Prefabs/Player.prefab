@@ -249,7 +249,7 @@ GameObject:
   - component: {fileID: 929772582024821250}
   - component: {fileID: 7771662696445145079}
   - component: {fileID: 8760391596670387461}
-  m_Layer: 6
+  m_Layer: 11
   m_Name: TrashDisposerDetector
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -33,6 +33,8 @@ public class WorldManager : MonoBehaviour
 
     [SerializeField] private List<GameObject> allTrash= new List<GameObject>();
 
+    [SerializeField] private ShortShakerParameters DestroyShake;
+
     private void Awake()
     {
         if(Instance == null)

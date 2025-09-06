@@ -1,4 +1,4 @@
-using System.Numerics;
+
 using UnityEngine;
 
 public enum ProjectileOrigin
@@ -22,6 +22,16 @@ public class TrashProjectile : Trash
     public void TurnToTrash()
     {
         gameObject.tag = "Trash";
+
+    }
+
+    private void Update()
+    {
+        if(Mathf.Abs(transform.position.x) > WorldManager.Instance.WorldBounds.x * 0.99 || Mathf.Abs(transform.position.y) > WorldManager.Instance.WorldBounds.y * 0.99)
+        {
+            rb.AddForce((-transform.position).normalized );
+            
+        }
 
     }
 

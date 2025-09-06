@@ -45,6 +45,7 @@ public class WorldManager : MonoBehaviour
             
 
             var trash = Instantiate(allTrash[index]);
+            IncreamentTrashScore();
 
 
             trash.transform.position = new Vector3(x,y,0);

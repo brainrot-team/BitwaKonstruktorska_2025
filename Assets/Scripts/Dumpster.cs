@@ -15,6 +15,7 @@ public class Dumpster : MonoBehaviour
         {
             PlayerTrash.Instance.CollectedTrash--;
             PlayerEnergy.Energy++;
+            WorldManager.Instance.trashScore--;
         }
     }
 

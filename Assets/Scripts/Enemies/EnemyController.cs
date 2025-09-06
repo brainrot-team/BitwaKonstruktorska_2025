@@ -14,6 +14,8 @@ public class EnemyController : MonoBehaviour
 
     public int lastMultiplayer = 0;
 
+    public int currentHealth;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -24,6 +26,7 @@ public class EnemyController : MonoBehaviour
         //stateMachine.Init(states.SpinningState);
         stateMachine.Init(states.ForwardState);
         //stateMachine.Init(states.ToCenterState);
+        currentHealth = enemyData.maxHP;
         
     }
 
@@ -39,7 +42,9 @@ public class EnemyController : MonoBehaviour
 
     public void HitByProjectile()
     {
-        Destroy(gameObject);
+        currentHealth--;
+        if(currentHealth <= 0)
+            Destroy(gameObject);
 
     }
 }

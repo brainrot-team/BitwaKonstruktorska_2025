@@ -51,9 +51,9 @@ public class WorldManager : MonoBehaviour
             float y = UnityEngine.Random.Range(-WorldBounds.x, WorldBounds.x);
 
             int index = Random.Range(0,allTrash.Count);
-            
 
-            var trash = Instantiate(allTrash[index]);
+
+            var trash = TrashPrefabHolder.Instance.getRandomTrash();
             IncreamentTrashScore();
 
 

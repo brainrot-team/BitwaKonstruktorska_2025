@@ -1,21 +1,17 @@
 using UnityEngine;
 
-public class ToCenterState : State
+public class RotateToPlayerState : State
 {
     Vector2 targetPosition;
     Transform transform;
     Rigidbody2D rb;
-
-
-    private Vector3 startingPosition;
-    private Vector3 circleCenter;
 
     private Vector3 targetPoint;
 
     private int multiplayer;
 
 
-    public ToCenterState(EnemyController enemy, StateMachine stateMachine) : base(enemy, stateMachine) { }
+    public RotateToPlayerState(EnemyController enemy, StateMachine stateMachine) : base(enemy, stateMachine) { }
 
     public override void Enter() 
 	{ 
@@ -23,7 +19,7 @@ public class ToCenterState : State
 		transform = enemy.enemyGameObject.transform;
         rb = enemy.rb;
 
-        targetPoint = WorldManager.Instance.GetRandomPointInBox();
+        targetPoint = WorldManager.Instance.GetPlayerPosition();
 
         if(enemy.lastMultiplayer == 0)
         {
@@ -56,6 +52,11 @@ public class ToCenterState : State
 
         if(Vector2.Angle(transform.right,targetPoint - transform.position) < 2.0f)
         {
+            if(enemy.viewRange.GetEnemyDetected())
+            {
+                enemy.stateMachine.Change(enemy.states.MoveTowardPlayer);
+                return;
+            }
             enemy.stateMachine.Change(enemy.states.ForwardState);
             return;   
         }

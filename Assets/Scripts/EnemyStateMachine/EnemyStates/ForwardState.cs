@@ -9,8 +9,6 @@ public class ForwardState : State
 
 
     private Vector3 startingPosition;
-    private Vector3 circleCenter;
-    private float circleAngle;
 
     private bool isInBox;
 
@@ -25,7 +23,6 @@ public class ForwardState : State
         base.Enter();
 		transform = enemy.enemyGameObject.transform;
         rb = enemy.rb;
-        circleCenter = new Vector3(transform.position.x - enemy.enemyData.circlingRadius,transform.position.y,0);
         isInBox = WorldManager.Instance.IsInBox(transform.position);
         currentTime = 0;
         maxTime = Random.Range(enemy.enemyData.minStateDuration,enemy.enemyData.maxStateDuaration);
@@ -40,6 +37,12 @@ public class ForwardState : State
 	public override void UpdateLogic() 
 	{
         base.UpdateLogic();
+        if(enemy.viewRange.GetEnemyDetected())
+        {
+            enemy.stateMachine.Change(enemy.states.RotateToPlayerState);
+            return;
+        }
+
         currentTime += Time.deltaTime;
         if(currentTime > maxTime)
         {

@@ -3,6 +3,8 @@ using UnityEngine;
 public class WorldManager : MonoBehaviour
 {
     public static WorldManager Instance;
+
+    public GameObject playerObject;
     
     public int trashScore = 0;
     
@@ -60,5 +62,12 @@ public class WorldManager : MonoBehaviour
     {
         return new Vector3(Random.Range(-WorldBounds.x,WorldBounds.x),Random.Range(-WorldBounds.y,WorldBounds.y),0); 
     }
+
+    public Vector3 GetPlayerPosition()
+    {
+        return playerObject.transform.position;
+    }
+
+
 
 }

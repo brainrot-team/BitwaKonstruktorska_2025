@@ -10,10 +10,10 @@ public class EnemyData : ScriptableObject
     public float speed = 10;
     [Header("Spinning")]
     public float angleSpeed = 1;
-    public float circlingRadius = 5.0f;
     [Header("Back to center")]
     public float backAngleSpeed = 1;
-    public float backCirclingRadius = 5.0f;
+    [Header("AttackSpeed")]
+    public float attackSpeed = 15;
     
     [Header("State Duration")]
     public float minStateDuration = 2.0f;

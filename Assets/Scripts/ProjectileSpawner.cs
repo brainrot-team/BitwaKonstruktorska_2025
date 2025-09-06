@@ -20,9 +20,11 @@ public class ProjectileSpawner : MonoBehaviour
         DontDestroyOnLoad(this);
     }
 
-    public void SpawnTrashProjectile(Vector2 trashPosition, Vector2 startVelocity)
+    public void SpawnTrashProjectile(Vector2 trashPosition, Vector2 startVelocity, ProjectileOrigin origin)
     {
-        GameObject trashProjectile = Instantiate(projectilePrefab, trashPosition, Quaternion.identity);
+        var projectile = Instantiate(projectilePrefab, trashPosition, Quaternion.identity);
+        TrashProjectile trashProjectile = projectile.GetComponent<TrashProjectile>();
+        trashProjectile.ShootProjectile(origin);
         trashProjectile.GetComponent<Rigidbody2D>().linearVelocity = startVelocity;
     }    
 }

@@ -14,6 +14,8 @@ public class PlayerTrash : MonoBehaviour
     
     
     private int collectedTrash = 100;
+    [SerializeField] private int maxTrashCapacity = 200;
+
     public int CollectedTrash
     {
         set
@@ -21,7 +23,21 @@ public class PlayerTrash : MonoBehaviour
             if (collectedTrash <= 0) return;
             collectedTrash = value;
             OnNumberOfAttacksChanged.Invoke(collectedTrash);
+
         }
         get => collectedTrash;
+    }
+
+    public bool AddTrash(int trashToAdd = 1)
+    {
+        if(CollectedTrash + trashToAdd <= maxTrashCapacity)
+        {
+            CollectedTrash += trashToAdd;
+            print("new trash ammount " + collectedTrash);
+            return true;
+        }
+        print("too much trash");
+        return false;
+
     }
 }

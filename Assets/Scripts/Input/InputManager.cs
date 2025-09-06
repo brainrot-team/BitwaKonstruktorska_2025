@@ -97,4 +97,9 @@ public class InputManager : MonoBehaviour
             energyDepletionCoroutine = null;
         }
     }
+
+    public void HitByProjectile()
+    {
+        print("hit by projectile");
+    }
 }

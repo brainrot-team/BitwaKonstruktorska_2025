@@ -17,7 +17,7 @@ public class GameWonUI : MonoBehaviour
         restartButton.onClick.AddListener(() =>
         {
             SoundManager.Instance.PlaySound(SoundEffectType.Click);
-
+            GameManager.Instance.ResetGame();
             UnityEngine.SceneManagement.SceneManager.LoadScene("SampleScene");
         });
         mainMenuButton.onClick.AddListener(() =>

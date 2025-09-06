@@ -17,6 +17,7 @@ public class GameOverUI : MonoBehaviour
         retryButton.onClick.AddListener(() =>
         {
             SoundManager.Instance.PlaySound(SoundEffectType.Click);
+            GameManager.Instance.ResetGame();
             UnityEngine.SceneManagement.SceneManager.LoadScene(
                 UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
         });

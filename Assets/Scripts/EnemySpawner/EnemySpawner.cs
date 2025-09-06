@@ -8,6 +8,9 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private float spawnDelay = 5.0f;
     [SerializeField] private int enemyMaxNumber = 3;
 
+    [SerializeField] private float xNoSpawnZone = 3;
+    [SerializeField] private float yNoSpawnZone = 3;
+
     [SerializeField] private List<GameObject> spawnedEnemies = new List<GameObject>();
     private float currentTime = 0;
 

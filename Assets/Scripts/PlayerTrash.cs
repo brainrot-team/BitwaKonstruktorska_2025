@@ -13,7 +13,7 @@ public class PlayerTrash : MonoBehaviour
     }
     
     
-    private int collectedTrash = 100;
+    private int collectedTrash = 20;
     [SerializeField] private int maxTrashCapacity = 200;
 
     public int CollectedTrash

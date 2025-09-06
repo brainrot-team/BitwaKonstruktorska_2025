@@ -3,12 +3,23 @@ using System.Collections.Generic;
 
 public class EnemySpawner : MonoBehaviour
 {
+    [SerializeField] private int spawnOnStart = 0;
     [SerializeField] private List<GameObject> enemyPrefab;
     [SerializeField] private float spawnDelay = 5.0f;
     [SerializeField] private int enemyMaxNumber = 3;
 
+    [SerializeField] private Vector2 NoSpawnZone = new Vector2(3,3);
+
     [SerializeField] private List<GameObject> spawnedEnemies = new List<GameObject>();
     private float currentTime = 0;
+
+    void Start()
+    {
+        for(int i=0;i<spawnOnStart;i++)
+        {
+            Spawn();
+        }
+    }
 
     void Update()
     {
@@ -24,7 +35,13 @@ public class EnemySpawner : MonoBehaviour
     {
         int randIndex = Random.Range(0,enemyPrefab.Count);
 
+
         Vector3 spawnPosition = new Vector3(Random.Range(-GetWorldBounds().x,GetWorldBounds().x), Random.Range(-GetWorldBounds().y,GetWorldBounds().y),0);
+        
+        while(isInDeadzone(spawnPosition))
+        {
+            spawnPosition = new Vector3(Random.Range(-GetWorldBounds().x,GetWorldBounds().x), Random.Range(-GetWorldBounds().y,GetWorldBounds().y),0);
+        }
 
         spawnedEnemies.RemoveAll(enemy => enemy == null);
 
@@ -38,5 +55,11 @@ public class EnemySpawner : MonoBehaviour
     private Vector2 GetWorldBounds()
     {
         return WorldManager.Instance.WorldBounds;
+    }
+
+    public bool isInDeadzone(Vector3 point)
+    {
+        return NoSpawnZone.x > point.x && -NoSpawnZone.x < point.x &&
+                NoSpawnZone.y > point.y && -NoSpawnZone.y < point.y;
     }
 }

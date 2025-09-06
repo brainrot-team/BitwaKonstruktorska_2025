@@ -200,7 +200,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   aimSprite: {fileID: 6907201088705322334}
   offsetFromPlayer: 1.4
-  attackSpeed: 8
+  attackSpeed: 40
   delayBetweenShots: 0.5
 --- !u!114 &9076866303808680592
 MonoBehaviour:

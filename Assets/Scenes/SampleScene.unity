@@ -216,7 +216,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 774887981991348467, guid: e5ffb1d320daa8f439340df0626c157c, type: 3}
       propertyPath: startingTrash
-      value: 100
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 774887981991348467, guid: e5ffb1d320daa8f439340df0626c157c, type: 3}
       propertyPath: allTrash.Array.size

@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      galaxy aesthetic_0: 7591802403872969821
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

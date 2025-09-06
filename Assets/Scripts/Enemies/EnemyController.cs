@@ -5,7 +5,8 @@ public class EnemyController : MonoBehaviour
 
     [HideInInspector] public GameObject enemyGameObject;
     [HideInInspector] public Rigidbody2D rb;
-    //EnemyState state = new RandomPatrol();
+    
+    public EnemyViewRange viewRange;
     public StateMachine stateMachine;
 
     public StateList states;

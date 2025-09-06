@@ -12,7 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f813ef222c410a74dad300fee2cbf0fa, type: 3}
   m_Name: TestEnemy
   m_EditorClassIdentifier: 
-  speed: 5
-  angleSpeed: -1
   maxHP: 5
-  circlingRadius: 0.01
+  speed: 5
+  angleSpeed: 1
+  backAngleSpeed: 2
+  attackSpeed: 10
+  minStateDuration: 2
+  maxStateDuaration: 5

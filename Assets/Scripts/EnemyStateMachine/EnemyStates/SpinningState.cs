@@ -9,8 +9,6 @@ public class SpinningState : State
 
 
     private Vector3 startingPosition;
-    private Vector3 circleCenter;
-    private float circleAngle;
 
     private int multiplayer;
     private float currentTime = 0;
@@ -24,11 +22,10 @@ public class SpinningState : State
         base.Enter();
 		transform = enemy.enemyGameObject.transform;
         rb = enemy.rb;
-
-        circleCenter = new Vector3(transform.position.x - enemy.enemyData.circlingRadius,transform.position.y,0);
         
         multiplayer = Random.Range(1,100) < 50 ? -1 : 1;
         multiplayer = enemy.lastMultiplayer;
+        
         maxTime = Random.Range(enemy.enemyData.minStateDuration,enemy.enemyData.maxStateDuaration);
         currentTime = 0;
         
@@ -45,6 +42,11 @@ public class SpinningState : State
         currentTime += Time.deltaTime;
         if(currentTime > maxTime)
         {
+            if(enemy.viewRange.GetEnemyDetected())
+            {
+                enemy.stateMachine.Change(enemy.states.RotateToPlayerState);
+                return;
+            }
             if(!WorldManager.Instance.IsInBox(transform.position))
             {
                 enemy.stateMachine.Change(enemy.states.ToCenterState);
@@ -58,21 +60,9 @@ public class SpinningState : State
 	public override void UpdatePhysics() 
 	{
         base.UpdatePhysics();
-        startingPosition = transform.position;
-        Vector3 currentPosition = CalculateMovement();
-        rb.MovePosition(currentPosition);
-
-        Vector3 direction = currentPosition - startingPosition;
-        float angle = Mathf.Atan2(direction.y,direction.x) * Mathf.Rad2Deg;
+        float angle = transform.rotation.eulerAngles.z + (multiplayer * enemy.enemyData.angleSpeed + Time.deltaTime);
         transform.rotation = Quaternion.Euler(0,0,angle);
+        rb.MovePosition(transform.position + (transform.right * Time.deltaTime * enemy.enemyData.speed));
+
 	}
-
-    private Vector3 CalculateMovement()
-    {
-        circleAngle += enemy.enemyData.angleSpeed * Time.deltaTime;
-        float xOffset = Mathf.Cos(circleAngle) * enemy.enemyData.circlingRadius;
-        float yOffset = Mathf.Sin(circleAngle) * enemy.enemyData.circlingRadius;
-
-        return new Vector3(startingPosition.x + xOffset, startingPosition.y + yOffset,0);
-    }
 }

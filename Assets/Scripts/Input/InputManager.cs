@@ -82,7 +82,7 @@ public class InputManager : MonoBehaviour
             PlayerEnergy.Energy--;
             if (PlayerEnergy.Energy <= 0)
             {
-                GameManager.OnGameOver.Invoke();
+                GameManager.OnGameOver.Invoke("OUT OF ENERGY!");
             }
             yield return new WaitForSeconds(energyDecreaseInterval);
         }

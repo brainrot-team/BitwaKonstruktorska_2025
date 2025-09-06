@@ -52,15 +52,33 @@ public class EnemyController : MonoBehaviour
 
     public void HitByProjectile()
     {
+        
+        FlashOnDamage();
         currentHealth--;
         if (currentHealth <= 0)
+        {
             Destroy(gameObject);
+            SpawnProjectileOnDeath();
+        }
 
     }
 
     private void SpawnProjectileOnDeath()
     {
 
+        
+
+        WorldManager.Instance.TrashScore++;
+        for(int i =0;i<enemyData.maxHP +1;i++)
+        {
+            
+            GameObject trashObject = TrashPrefabHolder.Instance.getRandomTrash();
+
+            var pom = ((float)i / (enemyData.maxHP +1)) * 2 * Mathf.PI;
+            trashObject.GetComponent<Rigidbody2D>().linearVelocity = new Vector2(Mathf.Sin(pom),Mathf.Cos(pom));
+            trashObject.transform.SetPositionAndRotation(transform.position, transform.rotation);
+            trashObject.GetComponent<TrashProjectile>().ShootProjectile(ProjectileOrigin.neutral);
+        }
 
     }
     

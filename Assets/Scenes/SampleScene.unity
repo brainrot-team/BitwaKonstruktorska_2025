@@ -3079,7 +3079,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5196638483617057797, guid: c7dd422a078d73044a4c24d9531cc12f, type: 3}
       propertyPath: spawnDelay
-      value: 20
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5196638483617057797, guid: c7dd422a078d73044a4c24d9531cc12f, type: 3}
       propertyPath: spawnOnStart
@@ -3087,7 +3087,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5196638483617057797, guid: c7dd422a078d73044a4c24d9531cc12f, type: 3}
       propertyPath: enemyMaxNumber
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6720389385286818864, guid: c7dd422a078d73044a4c24d9531cc12f, type: 3}
       propertyPath: m_Name

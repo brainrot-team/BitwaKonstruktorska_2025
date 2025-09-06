@@ -473,6 +473,17 @@
                 },
                 {
                     "name": "",
+                    "id": "b40707e2-a3c6-419a-af77-053ff92ef460",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Dispose",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "2ea26d23-2326-4118-933b-72a7d8de98b8",
                     "path": "<Keyboard>/x",
                     "interactions": "",

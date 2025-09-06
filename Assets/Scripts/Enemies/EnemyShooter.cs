@@ -4,32 +4,32 @@ public class EnemyShooter : MonoBehaviour
 {
     [Header("Basics")]
     [SerializeField] private Transform shootPoint;
-    [SerializeField] private GameObject trashBullet;
+    [SerializeField] protected GameObject trashBullet;
 
-    [SerializeField] private LayerMask hitLayers;
-    [SerializeField] private float shootDistance;
+    [SerializeField] protected LayerMask hitLayers;
+    [SerializeField] protected float shootDistance;
 
 
     [Header("Serie Shot")]
-    [SerializeField] private float delayBetween = 0.5f;
-    [SerializeField] private int bulletsInSerie = 3;
+    [SerializeField] protected float delayBetween = 0.5f;
+    [SerializeField] protected int bulletsInSerie = 3;
 
 
     [Header("Delay Next Serie")]
-    [SerializeField] private float reloadTime = 1.0f;
+    [SerializeField] protected float reloadTime = 1.0f;
 
     [Header("Random Shot")]
-    [SerializeField] private float minDelay = 10.0f;
-    [SerializeField] private float maxDelay = 30.0f;
+    [SerializeField] protected float minDelay = 10.0f;
+    [SerializeField] protected float maxDelay = 30.0f;
 
-    private int shots = 0;
-    private float currentTimeAfterShoot = 0;
-    private float currentTimeAfterSerie = 0;
+    protected int shots = 0;
+    protected float currentTimeAfterShoot = 0;
+    protected float currentTimeAfterSerie = 0;
 
-    private float timeToRandomShoot = 0;
-    private float randomShotTime = 0;
+    protected float timeToRandomShoot = 0;
+    protected float randomShotTime = 0;
 
-    private bool canShoot = false;
+    protected bool canShoot = false;
 
     private RaycastHit2D hit;
 

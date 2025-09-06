@@ -12,6 +12,6 @@ public class PlayerTrashUI : MonoBehaviour
     
     private void UpdateTrashUI(int newTrash)
     {
-        text.text = newTrash.ToString("D3");
+        text.text = newTrash.ToString("D2");
     }
 }

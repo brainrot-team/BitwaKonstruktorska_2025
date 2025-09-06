@@ -895,8 +895,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1754210242}
-  - {fileID: 722069276}
-  - {fileID: 1823917672}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &391959576
@@ -3081,11 +3079,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5196638483617057797, guid: c7dd422a078d73044a4c24d9531cc12f, type: 3}
       propertyPath: spawnDelay
-      value: 20
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5196638483617057797, guid: c7dd422a078d73044a4c24d9531cc12f, type: 3}
       propertyPath: enemyMaxNumber
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6720389385286818864, guid: c7dd422a078d73044a4c24d9531cc12f, type: 3}
       propertyPath: m_Name
@@ -3898,11 +3896,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6940402483830601086, guid: 2b0e8e0b2f846784a8e2a659c72e1604, type: 3}
       propertyPath: m_NormalizedViewPortRect.width
-      value: 0.9998101
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6940402483830601086, guid: 2b0e8e0b2f846784a8e2a659c72e1604, type: 3}
       propertyPath: m_NormalizedViewPortRect.height
-      value: 0.99986756
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7844339909549165318, guid: 2b0e8e0b2f846784a8e2a659c72e1604, type: 3}
       propertyPath: m_Name

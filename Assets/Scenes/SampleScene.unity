@@ -1653,11 +1653,11 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1535493837}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 96, y: 16}
-  m_Pivot: {x: 0, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 3, y: 1}
+  m_SizeDelta: {x: 90, y: 7}
+  m_Pivot: {x: 0, y: 0}
 --- !u!114 &747643402
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1678,7 +1678,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 3dd3cb24085fb1740979aa15edafbdd6, type: 3}
+  m_Sprite: {fileID: 4369043637723737009, guid: 3dd3cb24085fb1740979aa15edafbdd6, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2296,7 +2296,7 @@ Transform:
   m_GameObject: {fileID: 1499459153}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.05, y: 1.39, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3082,6 +3082,10 @@ PrefabInstance:
       value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 5196638483617057797, guid: c7dd422a078d73044a4c24d9531cc12f, type: 3}
+      propertyPath: spawnOnStart
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5196638483617057797, guid: c7dd422a078d73044a4c24d9531cc12f, type: 3}
       propertyPath: enemyMaxNumber
       value: 5
       objectReference: {fileID: 0}
@@ -3829,6 +3833,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7510562383023737392, guid: 7a9ab41f2aabbbc4ea7286dace80db3d, type: 3}
+      propertyPath: backgrounds._serializedList.Array.data[0].Value
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3896,7 +3904,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6940402483830601086, guid: 2b0e8e0b2f846784a8e2a659c72e1604, type: 3}
       propertyPath: m_NormalizedViewPortRect.width
-      value: 0.9981785
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6940402483830601086, guid: 2b0e8e0b2f846784a8e2a659c72e1604, type: 3}
       propertyPath: m_NormalizedViewPortRect.height
@@ -4012,21 +4020,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 4520301485344081484, guid: c61c2c44cb4841d4e9726436131bcd3e, type: 3}
-      propertyPath: maxSpeed
-      value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 4520301485344081484, guid: c61c2c44cb4841d4e9726436131bcd3e, type: 3}
-      propertyPath: speedDecreasePerAttack
-      value: 0.8
-      objectReference: {fileID: 0}
     - target: {fileID: 5522942492387491934, guid: c61c2c44cb4841d4e9726436131bcd3e, type: 3}
       propertyPath: attackSpeed
-      value: 65
-      objectReference: {fileID: 0}
-    - target: {fileID: 5522942492387491934, guid: c61c2c44cb4841d4e9726436131bcd3e, type: 3}
-      propertyPath: delayBetweenShots
-      value: 0.45
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 8679362156191213820, guid: c61c2c44cb4841d4e9726436131bcd3e, type: 3}
       propertyPath: m_LocalPosition.x

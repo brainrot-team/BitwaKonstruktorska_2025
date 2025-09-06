@@ -172,6 +172,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3654878730848759846, guid: 602a2b98eba10474c953051892a6989c, type: 3}
+      propertyPath: maxDelay
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 3654878730848759846, guid: 602a2b98eba10474c953051892a6989c, type: 3}
+      propertyPath: minDelay
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3654878730848759846, guid: 602a2b98eba10474c953051892a6989c, type: 3}
       propertyPath: reloadTime
       value: 0.5
       objectReference: {fileID: 0}

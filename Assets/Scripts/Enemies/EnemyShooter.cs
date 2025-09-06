@@ -2,20 +2,32 @@ using UnityEngine;
 
 public class EnemyShooter : MonoBehaviour
 {
+    [Header("Basics")]
     [SerializeField] private Transform shootPoint;
     [SerializeField] private GameObject trashBullet;
 
     [SerializeField] private LayerMask hitLayers;
     [SerializeField] private float shootDistance;
 
+
+    [Header("Serie Shot")]
     [SerializeField] private float delayBetween = 0.5f;
     [SerializeField] private int bulletsInSerie = 3;
 
+
+    [Header("Delay Next Serie")]
     [SerializeField] private float reloadTime = 1.0f;
+
+    [Header("Random Shot")]
+    [SerializeField] private float minDelay = 10.0f;
+    [SerializeField] private float maxDelay = 30.0f;
 
     private int shots = 0;
     private float currentTimeAfterShoot = 0;
     private float currentTimeAfterSerie = 0;
+
+    private float timeToRandomShoot = 0;
+    private float randomShotTime = 0;
 
     private bool canShoot = false;
 
@@ -23,7 +35,7 @@ public class EnemyShooter : MonoBehaviour
 
     void Start()
     {
-
+        randomShotTime = Random.Range(minDelay,maxDelay);
     }
 
     void Update()
@@ -40,11 +52,18 @@ public class EnemyShooter : MonoBehaviour
                 shots = 0;
                 canShoot = false;
                 currentTimeAfterSerie = 0;
+                timeToRandomShoot = 0;
             }
+            return;
         }
         else
         {
             currentTimeAfterSerie += Time.deltaTime;
+            timeToRandomShoot += Time.deltaTime;
+        }
+        if(timeToRandomShoot > randomShotTime)
+        {
+            canShoot = true;
         }
     }
 

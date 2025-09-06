@@ -2641,6 +2641,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5196638483617057797, guid: c7dd422a078d73044a4c24d9531cc12f, type: 3}
+      propertyPath: enemyMaxNumber
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 6720389385286818864, guid: c7dd422a078d73044a4c24d9531cc12f, type: 3}
       propertyPath: m_Name
       value: EnemySpawner
@@ -3311,7 +3315,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5700245152171759103, guid: 2f8d3cf434290e94e94fbc865e9ff8cb, type: 3}
       propertyPath: m_Volume
-      value: 0
+      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: 6277729401971347954, guid: 2f8d3cf434290e94e94fbc865e9ff8cb, type: 3}
       propertyPath: m_Pitch
@@ -3401,6 +3405,18 @@ PrefabInstance:
     - target: {fileID: 2135701575239600984, guid: c61c2c44cb4841d4e9726436131bcd3e, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 4520301485344081484, guid: c61c2c44cb4841d4e9726436131bcd3e, type: 3}
+      propertyPath: maxSpeed
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 4520301485344081484, guid: c61c2c44cb4841d4e9726436131bcd3e, type: 3}
+      propertyPath: startEnergy
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 4520301485344081484, guid: c61c2c44cb4841d4e9726436131bcd3e, type: 3}
+      propertyPath: speedDecreasePerAttack
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 5845051438502650809, guid: c61c2c44cb4841d4e9726436131bcd3e, type: 3}
       propertyPath: m_Size.x

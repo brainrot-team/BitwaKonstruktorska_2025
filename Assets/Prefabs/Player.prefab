@@ -183,8 +183,8 @@ MonoBehaviour:
   trashDisposer: {fileID: 7771662696445145079}
   maxSpeed: 30
   speedDecreasePerAttack: 0.6
-  startEnergy: 100
-  energyDecreaseInterval: 2
+  startEnergy: 50
+  energyDecreaseInterval: 4
   rb: {fileID: 0}
 --- !u!114 &5522942492387491934
 MonoBehaviour:
@@ -283,7 +283,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ef194acce6463d4a81a9bd552c85305, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  disposeInterval: 0.4
+  disposeInterval: 0.1
 --- !u!58 &8760391596670387461
 CircleCollider2D:
   m_ObjectHideFlags: 0

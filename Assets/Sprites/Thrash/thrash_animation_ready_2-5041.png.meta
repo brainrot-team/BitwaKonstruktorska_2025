@@ -52,7 +52,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -118,10 +118,10 @@ TextureImporter:
       name: thrash_animation_ready_2-5041_0
       rect:
         serializedVersion: 2
-        x: 15
-        y: 15
-        width: 34
-        height: 34
+        x: 0
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,10 +140,10 @@ TextureImporter:
       name: thrash_animation_ready_2-5041_1
       rect:
         serializedVersion: 2
-        x: 78
-        y: 16
-        width: 35
-        height: 36
+        x: 64
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -162,10 +162,10 @@ TextureImporter:
       name: thrash_animation_ready_2-5041_2
       rect:
         serializedVersion: 2
-        x: 144
-        y: 16
-        width: 32
-        height: 35
+        x: 128
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -184,10 +184,10 @@ TextureImporter:
       name: thrash_animation_ready_2-5041_3
       rect:
         serializedVersion: 2
-        x: 204
-        y: 16
-        width: 35
-        height: 33
+        x: 192
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -206,10 +206,10 @@ TextureImporter:
       name: thrash_animation_ready_2-5041_4
       rect:
         serializedVersion: 2
-        x: 271
-        y: 14
-        width: 32
-        height: 35
+        x: 256
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -228,10 +228,10 @@ TextureImporter:
       name: thrash_animation_ready_2-5041_5
       rect:
         serializedVersion: 2
-        x: 335
-        y: 16
-        width: 37
-        height: 35
+        x: 320
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -250,7 +250,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: b707a9043609c124e9669b4ca80cb893
     internalID: 0
     vertices: []
     indices: 

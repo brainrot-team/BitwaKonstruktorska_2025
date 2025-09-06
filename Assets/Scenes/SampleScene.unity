@@ -895,8 +895,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1754210242}
-  - {fileID: 722069276}
-  - {fileID: 1823917672}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &391959576
@@ -3902,11 +3900,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6940402483830601086, guid: 2b0e8e0b2f846784a8e2a659c72e1604, type: 3}
       propertyPath: m_NormalizedViewPortRect.width
-      value: 0.9998101
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6940402483830601086, guid: 2b0e8e0b2f846784a8e2a659c72e1604, type: 3}
       propertyPath: m_NormalizedViewPortRect.height
-      value: 0.99986756
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7844339909549165318, guid: 2b0e8e0b2f846784a8e2a659c72e1604, type: 3}
       propertyPath: m_Name
@@ -4017,6 +4015,10 @@ PrefabInstance:
     - target: {fileID: 2135701575239600984, guid: c61c2c44cb4841d4e9726436131bcd3e, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 5522942492387491934, guid: c61c2c44cb4841d4e9726436131bcd3e, type: 3}
+      propertyPath: attackSpeed
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 8679362156191213820, guid: c61c2c44cb4841d4e9726436131bcd3e, type: 3}
       propertyPath: m_LocalPosition.x

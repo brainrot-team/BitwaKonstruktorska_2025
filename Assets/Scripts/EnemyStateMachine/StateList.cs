@@ -11,7 +11,8 @@ public class StateList
         ToCenterState = 4,
         RotateToPlayerState = 5,
         MoveTowardPlayer = 6,
-        EscapeState = 7
+        EscapeState = 7,
+        ForwardToBoxState = 8
 
     }
     
@@ -23,6 +24,7 @@ public class StateList
     public RotateToPlayerState RotateToPlayerState => (RotateToPlayerState)states[5];
     public MoveTowardPlayer MoveTowardPlayer => (MoveTowardPlayer)states[6];
     public EscapeState EscapeState => (EscapeState)states[7];
+    public ForwardToBoxState ForwardToBoxState => (ForwardToBoxState)states[8];
 
     public State GetState(StateEnum stateEnum) => states[Convert.ToInt32(stateEnum)];
 
@@ -32,7 +34,7 @@ public class StateList
 
     public StateList(EnemyController enemy, StateMachine stateMachine)
     {
-        states = new State[8];
+        states = new State[9];
         states[0] = new NoneState(enemy, stateMachine); 
         states[1] = new PatrollState(enemy, stateMachine); 
         states[2] = new SpinningState(enemy, stateMachine);
@@ -41,6 +43,7 @@ public class StateList
         states[5] = new RotateToPlayerState(enemy, stateMachine);
         states[6] = new MoveTowardPlayer(enemy, stateMachine);
         states[7] = new EscapeState(enemy, stateMachine);
+        states[8] = new ForwardToBoxState(enemy, stateMachine);
     }
 
 }

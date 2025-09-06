@@ -61,13 +61,13 @@ public class ToCenterState : State
         transform.rotation = Quaternion.Euler(0,0,angle);
         rb.MovePosition(transform.position + (transform.right * Time.deltaTime * enemy.enemyData.speed));
 
-        if(Vector2.Angle(transform.right,targetPoint - transform.position) < 2.0f)
+        if(Vector2.Angle(transform.right,targetPoint - transform.position) < 10.0f)
         {
             if(enemy.viewRange.GetEnemyDetected() && WorldManager.Instance.IsInBox(WorldManager.Instance.GetPlayerPosition()))
             {
                 enemy.stateMachine.Change(enemy.states.MoveTowardPlayer);
             }
-            enemy.stateMachine.Change(enemy.states.ForwardState);
+            enemy.stateMachine.Change(enemy.states.ForwardToBoxState);
             return;   
         }
 	}

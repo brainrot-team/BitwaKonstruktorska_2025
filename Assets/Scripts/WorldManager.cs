@@ -10,7 +10,14 @@ public class WorldManager : MonoBehaviour
 
     public GameObject playerObject;
     
-    public int trashScore = 0;
+    private int trashScore = 0;
+    public int TrashScore {
+        get => trashScore;
+        set {
+            trashScore = value;
+            OnTrashScoreChanged.Invoke(trashScore);
+        }
+    }
 
 
 
@@ -76,8 +83,7 @@ public class WorldManager : MonoBehaviour
 
     public void IncreamentTrashScore()
     {
-        trashScore++;
-        OnTrashScoreChanged.Invoke(trashScore);
+        TrashScore++;
     }
 
     public bool IsInBox(Vector3 point)

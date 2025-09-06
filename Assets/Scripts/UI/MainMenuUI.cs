@@ -8,6 +8,7 @@ public class MainMenuUI : MonoBehaviour
     void Start()
     {
         startButton.onClick.AddListener(() => {
+            SoundManager.Instance.PlaySound(SoundEffectType.Click);
             UnityEngine.SceneManagement.SceneManager.LoadScene("SampleScene");
         });    
     }

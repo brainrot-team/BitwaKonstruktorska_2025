@@ -18,11 +18,13 @@ public class MainMenuUI : MonoBehaviour
     {
         startButton.onClick.AddListener(() => {
             SoundManager.Instance.PlaySound(SoundEffectType.Click);
+            GameManager.Instance.ResetGame();
             UnityEngine.SceneManagement.SceneManager.LoadScene("SampleScene");
         });
 
         tutorialButton.onClick.AddListener(() => {
             SoundManager.Instance.PlaySound(SoundEffectType.Click);
+            GameManager.Instance.ResetGame();
             UnityEngine.SceneManagement.SceneManager.LoadScene("ComicsScene");
         });
 

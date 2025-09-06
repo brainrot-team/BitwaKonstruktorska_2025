@@ -22,15 +22,21 @@ public class EnemySpawner : MonoBehaviour
 
     public void Spawn()
     {
-        
         int randIndex = Random.Range(0,enemyPrefab.Count);
+
+        Vector3 spawnPosition = new Vector3(Random.Range(-GetWorldBounds().x,GetWorldBounds().x), Random.Range(-GetWorldBounds().y,GetWorldBounds().y),0);
 
         spawnedEnemies.RemoveAll(enemy => enemy == null);
 
         if(enemyMaxNumber > spawnedEnemies.Count)
         {
-            GameObject enemy =  Instantiate(enemyPrefab[randIndex], transform.position, Quaternion.identity);
+            GameObject enemy =  Instantiate(enemyPrefab[randIndex], spawnPosition, Quaternion.identity);
             spawnedEnemies.Add(enemy);
         }
+    }
+
+    private Vector2 GetWorldBounds()
+    {
+        return WorldManager.Instance.WorldBounds;
     }
 }

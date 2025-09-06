@@ -131,7 +131,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 31743903}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ef0a6af33c4bce24fa0f13e4a9c7eac4, type: 3}
   m_Name: 
@@ -194,8 +194,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3654878730848759846, guid: 602a2b98eba10474c953051892a6989c, type: 3}
+      propertyPath: reloadTime
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3654878730848759846, guid: 602a2b98eba10474c953051892a6989c, type: 3}
       propertyPath: delayBetween
-      value: 0.1
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3654878730848759846, guid: 602a2b98eba10474c953051892a6989c, type: 3}
+      propertyPath: bulletsInSerie
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6325806553015089678, guid: 602a2b98eba10474c953051892a6989c, type: 3}
       propertyPath: m_Radius
@@ -670,8 +678,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5196638483617057797, guid: c7dd422a078d73044a4c24d9531cc12f, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5196638483617057797, guid: c7dd422a078d73044a4c24d9531cc12f, type: 3}
+      propertyPath: enemyPrefab.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5196638483617057797, guid: c7dd422a078d73044a4c24d9531cc12f, type: 3}
+      propertyPath: 'enemyPrefab.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2153830779018111169, guid: 602a2b98eba10474c953051892a6989c, type: 3}
     - target: {fileID: 5196638483617057797, guid: c7dd422a078d73044a4c24d9531cc12f, type: 3}
       propertyPath: 'enemyPrefab.Array.data[1]'
       value: 

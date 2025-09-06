@@ -16,6 +16,6 @@ public class PerformShake : MonoBehaviour
 
     void Update()
     {
-        TriggerShake(transform.position);
+        //TriggerShake(transform.position);
     }
 }

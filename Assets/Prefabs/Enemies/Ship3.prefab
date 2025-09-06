@@ -139,8 +139,8 @@ MonoBehaviour:
   delayBetween: 0.2
   bulletsInSerie: 3
   reloadTime: 1
-  minDelay: 10
-  maxDelay: 30
+  minDelay: 60
+  maxDelay: 90
 --- !u!1 &2881402811299542756
 GameObject:
   m_ObjectHideFlags: 0

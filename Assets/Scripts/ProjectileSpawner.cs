@@ -22,10 +22,10 @@ public class ProjectileSpawner : MonoBehaviour
 
     public void SpawnTrashProjectile(Vector2 trashPosition, Vector2 startVelocity, ProjectileOrigin origin,Transform targetTransorm)
     {
-        print("AAAAAAAAAAAAAAAAAAAAAAAAAAA");
+        
         var projectile = TrashPrefabHolder.Instance.getRandomTrash();
             
-         projectile.transform.SetPositionAndRotation( trashPosition, Quaternion.identity);
+         projectile.transform.SetPositionAndRotation(trashPosition, Quaternion.identity);
 
         TrashProjectile trashProjectile = projectile.GetComponent<TrashProjectile>();
         trashProjectile.ShootProjectile(origin);

@@ -29,4 +29,9 @@ public class EnemyViewRange : MonoBehaviour
     {
         return enemyDetected;
     }
+
+    public float GetDistanceToPlayer(Vector3 point)
+    {
+        return Vector2.Distance(point, WorldManager.Instance.GetPlayerPosition());
+    }
 }

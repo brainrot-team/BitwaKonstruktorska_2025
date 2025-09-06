@@ -193,6 +193,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6325806553015089678, guid: 602a2b98eba10474c953051892a6989c, type: 3}
+      propertyPath: m_Radius
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7636563191205007910, guid: 602a2b98eba10474c953051892a6989c, type: 3}
       propertyPath: enemyData
       value: 
@@ -233,7 +237,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerObject: {fileID: 1347757743}
   trashScore: 0
-  WorldBounds: {x: 10, y: 10}
+  WorldBounds: {x: 20, y: 20}
 --- !u!4 &162166689
 Transform:
   m_ObjectHideFlags: 0

@@ -34,12 +34,12 @@ public class ComicsManager : MonoBehaviour
         Debug.Log("Current shot number: " + (currentShotNumber + 1));
         if (currentShotNumber >= numberOfShots)
         {
-            SceneManager.LoadScene("SampleScene");
+            SceneManager.LoadScene("TutorialScene");
         }
     }
     
     private void OnSkip(InputAction.CallbackContext context)
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("TutorialScene");
     }
 }

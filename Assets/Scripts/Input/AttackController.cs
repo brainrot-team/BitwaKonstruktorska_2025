@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 public class AttackController : MonoBehaviour
 {
     [Header("Aiming")]
-    [SerializeField] private Transform aimSprite;
+    [SerializeField] public Transform aimSprite;
 
     [Header("Attacks")]
     [SerializeField] float offsetFromPlayer = 1f;
@@ -50,7 +50,7 @@ public class AttackController : MonoBehaviour
         Vector2 startVelocity = direction * attackSpeed;
         Vector2 spawnPosition = (Vector2)transform.position + direction * offsetFromPlayer;
 
-        ProjectileSpawner.Instance.SpawnTrashProjectile(spawnPosition, startVelocity,ProjectileOrigin.Player);
+        ProjectileSpawner.Instance.SpawnTrashProjectile(spawnPosition, startVelocity,ProjectileOrigin.Player,aimSprite);
 
         PlayerTrash.Instance.CollectedTrash--;
         SoundManager.Instance?.PlaySound2(SoundEffectType.Shoot);

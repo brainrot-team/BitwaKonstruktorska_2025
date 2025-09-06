@@ -3,13 +3,15 @@ using UnityEngine;
 
 public class Timer : MonoBehaviour
 {
-    private float timeElapsed;
+    public static float TimeElapsed {
+        get; private set;
+    }
     [SerializeField] TextMeshProUGUI minutesText, secondsText;
     private bool stopped = false;
 
     void Start()
     {
-        timeElapsed = 0;
+        TimeElapsed = 0;
         UpdateText();
         GameManager.OnGameOver.AddListener((_) =>
         {
@@ -24,14 +26,14 @@ public class Timer : MonoBehaviour
     private void Update()
     {
         if(stopped) return;
-        timeElapsed += Time.deltaTime;
+        TimeElapsed += Time.deltaTime;
         UpdateText();
     }
 
     private void UpdateText()
     {
-        int minutes = Mathf.FloorToInt(timeElapsed / 60f);
-        int seconds = Mathf.FloorToInt(timeElapsed % 60f);
+        int minutes = Mathf.FloorToInt(TimeElapsed / 60f);
+        int seconds = Mathf.FloorToInt(TimeElapsed % 60f);
 
         minutesText.text = minutes.ToString("00");
         secondsText.text = seconds.ToString("00");

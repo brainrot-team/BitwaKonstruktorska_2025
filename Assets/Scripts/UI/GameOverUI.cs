@@ -1,13 +1,12 @@
 using TMPro;
 using UnityEngine;
-using UnityEngine.Android;
 using UnityEngine.UI;
 
 public class GameOverUI : MonoBehaviour
 {
     [SerializeField] GameObject gameOverPanel;
 
-    [SerializeField] TextMeshProUGUI reasonText;
+    [SerializeField] TextMeshProUGUI trashLeftText;
     [SerializeField] Button retryButton;
     [SerializeField] Button mainMenuButton;
 
@@ -18,6 +17,7 @@ public class GameOverUI : MonoBehaviour
         retryButton.onClick.AddListener(() =>
         {
             SoundManager.Instance.PlaySound(SoundEffectType.Click);
+            GameManager.Instance.ResetGame();
             UnityEngine.SceneManagement.SceneManager.LoadScene(
                 UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
         });
@@ -31,6 +31,6 @@ public class GameOverUI : MonoBehaviour
     private void ShowGameOver(string reason)
     {
         gameOverPanel.SetActive(true);
-        reasonText.text = reason;
+        trashLeftText.text = $"LEFT: {WorldManager.Instance.TrashScore}";
     }
 }

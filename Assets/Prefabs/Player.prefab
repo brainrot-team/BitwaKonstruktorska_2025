@@ -182,7 +182,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trashDisposer: {fileID: 7771662696445145079}
   maxSpeed: 30
-  speedDecreasePerAttack: 0.6
+  speedDecreasePerAttack: 0.2
   startEnergy: 100
   energyDecreaseInterval: 2
   rb: {fileID: 0}

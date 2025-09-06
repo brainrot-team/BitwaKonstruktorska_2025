@@ -4,7 +4,8 @@ using System.Collections.Generic;
 
 public class TrashPrefabHolder : MonoBehaviour
 {
-    [SerializeField] List<GameObject> trashPrefabs = new List<GameObject> ();
+    [SerializeField] List<AnimationClip> animations = new List<AnimationClip> ();
+    [SerializeField] GameObject trashPrefab;
 
     public static TrashPrefabHolder Instance { get; private set; }
 
@@ -22,9 +23,11 @@ public class TrashPrefabHolder : MonoBehaviour
 
     public GameObject getRandomTrash()
     {
-
-        int index = Random.Range (0, trashPrefabs.Count);
-        return trashPrefabs [index];
+        print("BBBBB");
+        var inst = Instantiate(trashPrefab);
+        var index = Random.Range(0, animations.Count);
+        inst.GetComponent<Animator>().Play($"animation{index+1}");
+        return inst;
     }
 
 }

@@ -1,106 +1,34 @@
 fileFormatVersion: 2
-guid: 4527afde97f531646bada27c9c77ded1
+guid: a1584370d3e9fbc478de126577c0acf9
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2244543243340742949
-    second: Asteroids_0
+      213: 1404028623067837608
+    second: Logo_0
   - first:
-      213: 2619520171403366046
-    second: Asteroids_1
+      213: 6795467416601567747
+    second: Logo_1
   - first:
-      213: 1335499673870057088
-    second: Asteroids_2
+      213: 6875538535012287733
+    second: Logo_2
   - first:
-      213: 1507908627372422575
-    second: Asteroids_3
+      213: 2381070441135384947
+    second: Logo_3
   - first:
-      213: -7919934119786583522
-    second: Asteroids_4
+      213: -3774021269495190454
+    second: Logo_4
   - first:
-      213: -1929366605773643366
-    second: Asteroids_5
+      213: 6893372319333685202
+    second: Logo_5
   - first:
-      213: -999273910119505843
-    second: Asteroids_6
+      213: 5409054819110567409
+    second: Logo_6
   - first:
-      213: 8961905289132254908
-    second: Asteroids_7
+      213: -5151548511015374267
+    second: Logo_7
   - first:
-      213: 5910077189670250263
-    second: Asteroids_8
-  - first:
-      213: -8865693707184755064
-    second: Asteroids_9
-  - first:
-      213: 1031131993308064179
-    second: Asteroids_10
-  - first:
-      213: 750050500109240725
-    second: Asteroids_11
-  - first:
-      213: -7104540694748506238
-    second: Asteroids_12
-  - first:
-      213: 5907881119353872011
-    second: Asteroids_13
-  - first:
-      213: -7502166565212197942
-    second: Asteroids_14
-  - first:
-      213: -1787493986476153839
-    second: Asteroids_15
-  - first:
-      213: 3613507152956987872
-    second: Asteroids_16
-  - first:
-      213: 3820930954083408551
-    second: Asteroids_17
-  - first:
-      213: -360415040057374862
-    second: Asteroids_18
-  - first:
-      213: -8850526130370417714
-    second: Asteroids_19
-  - first:
-      213: 194369119275557004
-    second: Asteroids_20
-  - first:
-      213: -7747959882323533515
-    second: Asteroids_21
-  - first:
-      213: 10232479435807909
-    second: Asteroids_22
-  - first:
-      213: -6080968486880380583
-    second: Asteroids_23
-  - first:
-      213: 5175908514787634643
-    second: Asteroids_24
-  - first:
-      213: -9166981146587973188
-    second: Asteroids_25
-  - first:
-      213: -221676209579804422
-    second: Asteroids_26
-  - first:
-      213: -5275164243449462585
-    second: Asteroids_27
-  - first:
-      213: 4565244339667762796
-    second: Asteroids_28
-  - first:
-      213: -7524349075605609760
-    second: Asteroids_29
-  - first:
-      213: -5534822883113934175
-    second: Asteroids_30
-  - first:
-      213: 8985461669548633969
-    second: Asteroids_31
-  - first:
-      213: 7163157180007714116
-    second: Asteroids_32
+      213: 8618792996653847996
+    second: Logo_8
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -171,7 +99,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -205,106 +133,203 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WindowsStoreApps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Asteroids_0
+      name: Logo_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32
-        height: 32
+        width: 142
+        height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: bdefba1ffc7c9d0e0800000000000000
-      internalID: -2244543243340742949
+      spriteID: 8a47074089c1c7310800000000000000
+      internalID: 1404028623067837608
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Asteroids_1
+      name: Logo_1
       rect:
         serializedVersion: 2
-        x: 32
+        x: 142
         y: 0
-        width: 32
-        height: 32
+        width: 142
+        height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e9ec77297b76a5420800000000000000
-      internalID: 2619520171403366046
+      spriteID: 30227498c995e4e50800000000000000
+      internalID: 6795467416601567747
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Asteroids_2
+      name: Logo_2
       rect:
         serializedVersion: 2
-        x: 64
+        x: 284
         y: 0
-        width: 32
-        height: 32
+        width: 142
+        height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 08ebcaaa0e5a88210800000000000000
-      internalID: 1335499673870057088
+      spriteID: 5f4cae29ed1da6f50800000000000000
+      internalID: 6875538535012287733
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Asteroids_3
+      name: Logo_3
       rect:
         serializedVersion: 2
-        x: 96
+        x: 426
         y: 0
-        width: 32
-        height: 32
+        width: 142
+        height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fa5b74848ea2de410800000000000000
-      internalID: 1507908627372422575
+      spriteID: 379ae0563f24b0120800000000000000
+      internalID: 2381070441135384947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Logo_4
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 0
+        width: 142
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4c68f8a6abff9bc0800000000000000
+      internalID: -3774021269495190454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Logo_5
+      rect:
+        serializedVersion: 2
+        x: 710
+        y: 0
+        width: 142
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d7156e0a9d2aaf50800000000000000
+      internalID: 6893372319333685202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Logo_6
+      rect:
+        serializedVersion: 2
+        x: 852
+        y: 0
+        width: 142
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1fd33b713b2d01b40800000000000000
+      internalID: 5409054819110567409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Logo_7
+      rect:
+        serializedVersion: 2
+        x: 994
+        y: 0
+        width: 142
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5427cbd5ce50288b0800000000000000
+      internalID: -5151548511015374267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Logo_8
+      rect:
+        serializedVersion: 2
+        x: 1136
+        y: 0
+        width: 142
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb55d2ee09a1c9770800000000000000
+      internalID: 8618792996653847996
       vertices: []
       indices: 
       edges: []
@@ -313,7 +338,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: e9eaf4b7a379ed64fb3f334a9c434896
+    spriteID: 1dea0f7a9b594c640a80eec8a8760309
     internalID: 0
     vertices: []
     indices: 
@@ -323,10 +348,15 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Asteroids_0: -2244543243340742949
-      Asteroids_1: 2619520171403366046
-      Asteroids_2: 1335499673870057088
-      Asteroids_3: 1507908627372422575
+      Logo_0: 1404028623067837608
+      Logo_1: 6795467416601567747
+      Logo_2: 6875538535012287733
+      Logo_3: 2381070441135384947
+      Logo_4: -3774021269495190454
+      Logo_5: 6893372319333685202
+      Logo_6: 5409054819110567409
+      Logo_7: -5151548511015374267
+      Logo_8: 8618792996653847996
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

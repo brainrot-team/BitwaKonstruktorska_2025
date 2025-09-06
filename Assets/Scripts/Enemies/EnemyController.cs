@@ -33,7 +33,7 @@ public class EnemyController : MonoBehaviour
         //stateMachine.Init(states.ToCenterState);
         currentHealth = enemyData.maxHP;
 
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         material = spriteRenderer.material;
     }
 

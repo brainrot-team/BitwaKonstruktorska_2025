@@ -81,12 +81,12 @@ public class InputManager : MonoBehaviour
         animator.SetBool("isDriving", true);
         while (true)
         {
-            Debug.Log("Energy Decreased!: " + PlayerEnergy.Energy);
+            //Debug.Log("Energy Decreased!: " + PlayerEnergy.Energy);
             PlayerEnergy.Energy--;
             if (PlayerEnergy.Energy <= 0)
             {
                 GameManager.OnGameOver.Invoke("OUT OF ENERGY!");
-                SoundManager.Instance.PlaySound(SoundEffectType.Lose);
+                SoundManager.Instance?.PlaySound(SoundEffectType.Lose);
             }
             yield return new WaitForSeconds(energyDecreaseInterval);
         }

@@ -40,11 +40,11 @@ public class MoveTowardPlayer : State
         
         float multiplayer = 0.0f;
 
-        if(angleBetweenTarget > 2.0f)
+        if(angleBetweenTarget > 10.0f)
         {
             multiplayer = -1.0f;
         }
-        else if(angleBetweenTarget < -2.0f)
+        else if(angleBetweenTarget < -10.0f)
         {
             multiplayer = 1.0f;
         }

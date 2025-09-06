@@ -15,6 +15,8 @@ public class EnemyData : ScriptableObject
     [Header("AttackSpeed")]
     public float attackSpeed = 15;
     public float minAttackDistance = 2.0f;
+
+    public float bulletSpeed = 10.0f;
     
     [Header("State Duration")]
     public float minStateDuration = 2.0f;

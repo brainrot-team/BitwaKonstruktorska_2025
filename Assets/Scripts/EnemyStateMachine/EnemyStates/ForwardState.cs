@@ -5,8 +5,6 @@ public class ForwardState : State
     Vector2 targetPosition;
     Transform transform;
     Rigidbody2D rb;
-    float speed = 10;
-
 
     private Vector3 startingPosition;
 

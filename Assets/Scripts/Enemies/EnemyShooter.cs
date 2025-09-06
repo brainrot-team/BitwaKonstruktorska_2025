@@ -33,7 +33,7 @@ public class EnemyShooter : MonoBehaviour
 
     private RaycastHit2D hit;
 
-    void Start()
+    protected void Start()
     {
         randomShotTime = Random.Range(minDelay,maxDelay);
     }
@@ -82,7 +82,6 @@ public class EnemyShooter : MonoBehaviour
             {
                 canShoot = true;
                 SpawnProjectile();
-                
             }
         }
     }

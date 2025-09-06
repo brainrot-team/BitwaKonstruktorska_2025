@@ -61,7 +61,7 @@ public class TrashProjectile : Trash
                 tag = "EnemyProjectile";
                 targetLayer = LayerMask.NameToLayer("Player");
                 rb.excludeLayers = 512;
-                print(rb.excludeLayers);
+                //print(rb.excludeLayers);
                 break;
             default:
                 Debug.LogError("Unknown ProjectileOrigin: " + origin);
@@ -99,7 +99,7 @@ public class TrashProjectile : Trash
 
         isLethal = false;
         rb.excludeLayers = 0;
-        print("disabling damage");
+        //print("disabling damage");
     }
 
     public override void OnTriggerEnter2D(Collider2D collision)

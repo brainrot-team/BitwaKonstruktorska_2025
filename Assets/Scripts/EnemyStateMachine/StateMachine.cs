@@ -20,6 +20,6 @@ public class StateMachine
 
     public void ShowState()
     {
-       // Debug.Log(currentState);
+       Debug.Log(currentState);
     }
 }

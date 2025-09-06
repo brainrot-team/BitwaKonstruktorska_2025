@@ -11,6 +11,8 @@ public class EnemyController : MonoBehaviour
     public StateList states;
     public EnemyData enemyData;
 
+    public int lastMultiplayer = 0;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -18,8 +20,10 @@ public class EnemyController : MonoBehaviour
         rb = gameObject.GetComponent<Rigidbody2D>();
         stateMachine = new StateMachine();
         states = new StateList(this, stateMachine);
-        stateMachine.Init(states.SpinningState);
-        //stateMachine.Init(states.ForwardState);
+        //stateMachine.Init(states.SpinningState);
+        stateMachine.Init(states.ForwardState);
+        //stateMachine.Init(states.ToCenterState);
+        
     }
 
     void Update()

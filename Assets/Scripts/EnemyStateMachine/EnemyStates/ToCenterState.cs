@@ -1,36 +1,40 @@
 using UnityEngine;
 
-public class SpinningState : State
+public class ToCenterState : State
 {
     Vector2 targetPosition;
     Transform transform;
     Rigidbody2D rb;
-    float speed = 10;
 
 
     private Vector3 startingPosition;
     private Vector3 circleCenter;
     private float circleAngle;
 
+    private Vector3 targetPoint;
+
     private int multiplayer;
-    private float currentTime = 0;
-    private float maxTime = 0;
 
 
-    public SpinningState(EnemyController enemy, StateMachine stateMachine) : base(enemy, stateMachine) { }
+    public ToCenterState(EnemyController enemy, StateMachine stateMachine) : base(enemy, stateMachine) { }
 
     public override void Enter() 
 	{ 
         base.Enter();
 		transform = enemy.enemyGameObject.transform;
         rb = enemy.rb;
+        circleCenter = new Vector3(transform.position.x - enemy.enemyData.backCirclingRadius,transform.position.y,0);
 
-        circleCenter = new Vector3(transform.position.x - enemy.enemyData.circlingRadius,transform.position.y,0);
-        
-        multiplayer = Random.Range(1,100) < 50 ? -1 : 1;
-        multiplayer = enemy.lastMultiplayer;
-        maxTime = Random.Range(enemy.enemyData.minStateDuration,enemy.enemyData.maxStateDuaration);
-        currentTime = 0;
+        targetPoint = WorldManager.Instance.GetRandomPointInBox();
+
+        if(enemy.lastMultiplayer == 0)
+        {
+            multiplayer = Random.Range(1,100) < 50 ? -1 : 1;
+        }
+        else
+        {
+            multiplayer = enemy.lastMultiplayer;
+        }
         
 	}
 
@@ -42,17 +46,6 @@ public class SpinningState : State
 	public override void UpdateLogic() 
 	{
         base.UpdateLogic();
-        currentTime += Time.deltaTime;
-        if(currentTime > maxTime)
-        {
-            if(!WorldManager.Instance.IsInBox(transform.position))
-            {
-                enemy.stateMachine.Change(enemy.states.ToCenterState);
-                return;
-            }
-            enemy.stateMachine.Change(enemy.states.ForwardState);
-            return;
-        }
 	}
 
 	public override void UpdatePhysics() 
@@ -65,11 +58,17 @@ public class SpinningState : State
         Vector3 direction = currentPosition - startingPosition;
         float angle = Mathf.Atan2(direction.y,direction.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0,0,angle);
+
+        if(Vector2.Angle(transform.right,targetPoint - transform.position) < 2.0f)
+        {
+            enemy.stateMachine.Change(enemy.states.ForwardState);
+            return;   
+        }
 	}
 
     private Vector3 CalculateMovement()
     {
-        circleAngle += enemy.enemyData.angleSpeed * Time.deltaTime;
+        circleAngle += enemy.enemyData.backAngleSpeed * Time.deltaTime;
         float xOffset = Mathf.Cos(circleAngle) * enemy.enemyData.circlingRadius;
         float yOffset = Mathf.Sin(circleAngle) * enemy.enemyData.circlingRadius;
 

@@ -550,12 +550,20 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 410649682600995772, guid: 2b0e8e0b2f846784a8e2a659c72e1604, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 410649682600995772, guid: 2b0e8e0b2f846784a8e2a659c72e1604, type: 3}
       propertyPath: m_RefResolutionX
       value: 256
       objectReference: {fileID: 0}
     - target: {fileID: 410649682600995772, guid: 2b0e8e0b2f846784a8e2a659c72e1604, type: 3}
       propertyPath: m_RefResolutionY
       value: 144
+      objectReference: {fileID: 0}
+    - target: {fileID: 571494259908798683, guid: 2b0e8e0b2f846784a8e2a659c72e1604, type: 3}
+      propertyPath: m_NormalizedViewPortRect.width
+      value: 0.9998101
       objectReference: {fileID: 0}
     - target: {fileID: 3288045984403689455, guid: 2b0e8e0b2f846784a8e2a659c72e1604, type: 3}
       propertyPath: m_LocalPosition.x
@@ -598,6 +606,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6940402483830601086, guid: 2b0e8e0b2f846784a8e2a659c72e1604, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6940402483830601086, guid: 2b0e8e0b2f846784a8e2a659c72e1604, type: 3}
       propertyPath: orthographic size
       value: 4.5
       objectReference: {fileID: 0}
@@ -611,11 +623,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6940402483830601086, guid: 2b0e8e0b2f846784a8e2a659c72e1604, type: 3}
       propertyPath: m_NormalizedViewPortRect.width
-      value: 1
+      value: 0.9998101
       objectReference: {fileID: 0}
     - target: {fileID: 6940402483830601086, guid: 2b0e8e0b2f846784a8e2a659c72e1604, type: 3}
       propertyPath: m_NormalizedViewPortRect.height
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7347857935233467100, guid: 2b0e8e0b2f846784a8e2a659c72e1604, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7844339909549165318, guid: 2b0e8e0b2f846784a8e2a659c72e1604, type: 3}
       propertyPath: m_Name

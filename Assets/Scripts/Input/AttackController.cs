@@ -9,7 +9,11 @@ public class AttackController : MonoBehaviour
 
     [Header("Attacks")]
     [SerializeField] float offsetFromPlayer = 1f;
-    [SerializeField] float attackSpeed = 8f;
+    [SerializeField] float attackSpeed = 8f;            //Bullet Speed
+
+    [SerializeField] float delayBetweenShots = 0.5f;
+
+    private float timeAfterShot = 0;
 
 
     private InputSystem_Actions inputActions;
@@ -19,6 +23,11 @@ public class AttackController : MonoBehaviour
     {
         this.inputActions = inputActions;
         inputActions.Player.Attack.performed += Attack;
+    }
+
+    private void Update()
+    {
+        timeAfterShot+=Time.deltaTime;
     }
 
     private void FixedUpdate()
@@ -34,7 +43,8 @@ public class AttackController : MonoBehaviour
     public void Attack(InputAction.CallbackContext context)
     {
         if (PlayerTrash.Instance.CollectedTrash <= 0) return;
-        Debug.Log("Attack!");
+        if (timeAfterShot < delayBetweenShots) return;
+        timeAfterShot = 0;
 
         Vector2 direction = (mouseWorldPos - (Vector2)transform.position).normalized;
         Vector2 startVelocity = direction * attackSpeed;

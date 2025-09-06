@@ -181,7 +181,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trashDisposer: {fileID: 7771662696445145079}
-  maxSpeed: 5
+  maxSpeed: 15
   speedDecreasePerAttack: 0.2
   startEnergy: 20
   energyDecreaseInterval: 2
@@ -214,7 +214,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collectedTrash: 5
-  maxTrashCapacity: 200
+  maxTrashCapacity: 99
 --- !u!95 &3895441201981680936
 Animator:
   serializedVersion: 7

@@ -109,19 +109,24 @@ public class EnemyDriveBy : EnemyShooter
     private void SpawnProjectiles()
     {
         currentTimeAfterShoot = 0;
-        GameObject trashObject = Instantiate(trashBullet, shootPoint1.position, Quaternion.Euler(0, 0, transform.rotation.eulerAngles.z + 90));
+        
+        GameObject trashObject = TrashPrefabHolder.Instance.getRandomTrash(); ;
+        trashObject.transform.SetPositionAndRotation(shootPoint1.position, Quaternion.Euler(0, 0, transform.rotation.eulerAngles.z + 90));
         trashObject.GetComponent<Rigidbody2D>().linearVelocity = transform.up * enemyData.bulletSpeed;
         trashObject.GetComponent<TrashProjectile>().ShootProjectile(ProjectileOrigin.Enemy);
 
-        GameObject trashObject2 = Instantiate(trashBullet, shootPoint2.position, Quaternion.Euler(0, 0, transform.rotation.eulerAngles.z + 90));
+        GameObject trashObject2 = TrashPrefabHolder.Instance.getRandomTrash(); ;
+        trashObject.transform.SetPositionAndRotation(shootPoint2.position, Quaternion.Euler(0, 0, transform.rotation.eulerAngles.z + 90));
         trashObject2.GetComponent<Rigidbody2D>().linearVelocity = transform.up * enemyData.bulletSpeed;
         trashObject2.GetComponent<TrashProjectile>().ShootProjectile(ProjectileOrigin.Enemy);
 
-        GameObject trashObject3 = Instantiate(trashBullet, shootPoint3.position, Quaternion.Euler(0, 0, transform.rotation.eulerAngles.z - 90));
+        GameObject trashObject3 = TrashPrefabHolder.Instance.getRandomTrash(); ;
+        trashObject.transform.SetPositionAndRotation(shootPoint3.position, Quaternion.Euler(0, 0, transform.rotation.eulerAngles.z - 90));
         trashObject3.GetComponent<Rigidbody2D>().linearVelocity = -transform.up * enemyData.bulletSpeed;
         trashObject3.GetComponent<TrashProjectile>().ShootProjectile(ProjectileOrigin.Enemy);
 
-        GameObject trashObject4 = Instantiate(trashBullet, shootPoint4.position, Quaternion.Euler(0, 0, transform.rotation.eulerAngles.z - 90));
+        GameObject trashObject4 = TrashPrefabHolder.Instance.getRandomTrash(); ;
+        trashObject.transform.SetPositionAndRotation(shootPoint4.position, Quaternion.Euler(0, 0, transform.rotation.eulerAngles.z - 90));
         trashObject4.GetComponent<Rigidbody2D>().linearVelocity = -transform.up * enemyData.bulletSpeed;
         trashObject4.GetComponent<TrashProjectile>().ShootProjectile(ProjectileOrigin.Enemy);
         shots++;

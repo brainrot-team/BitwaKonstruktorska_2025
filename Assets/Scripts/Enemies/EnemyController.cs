@@ -23,7 +23,6 @@ public class EnemyController : MonoBehaviour
         rb = gameObject.GetComponent<Rigidbody2D>();
         stateMachine = new StateMachine();
         states = new StateList(this, stateMachine);
-        //stateMachine.Init(states.SpinningState);
         stateMachine.Init(states.ForwardState);
         //stateMachine.Init(states.ToCenterState);
         currentHealth = enemyData.maxHP;
@@ -38,6 +37,9 @@ public class EnemyController : MonoBehaviour
     void FixedUpdate()
     {
         stateMachine.currentState.UpdatePhysics();
+    
+    
+    
     }
 
     public void HitByProjectile()

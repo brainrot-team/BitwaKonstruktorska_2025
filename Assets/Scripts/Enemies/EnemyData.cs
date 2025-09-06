@@ -14,6 +14,7 @@ public class EnemyData : ScriptableObject
     public float backAngleSpeed = 1;
     [Header("AttackSpeed")]
     public float attackSpeed = 15;
+    public float minAttackDistance = 2.0f;
     
     [Header("State Duration")]
     public float minStateDuration = 2.0f;

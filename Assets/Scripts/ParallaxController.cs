@@ -26,7 +26,7 @@ public class ParallaxController : MonoBehaviour
             float speed = kvp.Value;
 
             // Move background in opposite direction of camera movement
-            Vector3 newPos = background.position + new Vector3(delta.x * speed, delta.y * speed, 0);
+            Vector3 newPos = background.position + new Vector3((int)(delta.x * speed), (int)(delta.y * speed), 0);
             background.position = newPos;
         }
 

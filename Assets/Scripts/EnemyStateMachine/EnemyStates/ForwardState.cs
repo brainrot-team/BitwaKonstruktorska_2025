@@ -42,15 +42,15 @@ public class ForwardState : State
             enemy.stateMachine.Change(enemy.states.RotateToPlayerState);
             return;
         }
+        if(!WorldManager.Instance.IsInBox(transform.position))
+        {
+            enemy.stateMachine.Change(enemy.states.ToCenterState);
+            return;
+        }
 
         currentTime += Time.deltaTime;
         if(currentTime > maxTime)
-        {
-            if(!WorldManager.Instance.IsInBox(transform.position))
-            {
-                enemy.stateMachine.Change(enemy.states.ToCenterState);
-                return;
-            }
+        {   
             enemy.stateMachine.Change(enemy.states.SpinningState);
             return;
         }

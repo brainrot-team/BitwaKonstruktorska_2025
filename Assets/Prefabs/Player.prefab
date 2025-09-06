@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 4520301485344081484}
   - component: {fileID: 5522942492387491934}
   - component: {fileID: 9076866303808680592}
+  - component: {fileID: 3895441201981680936}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -198,7 +199,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aimSprite: {fileID: 6907201088705322334}
-  offsetFromPlayer: 1
+  offsetFromPlayer: 1.4
   attackSpeed: 8
 --- !u!114 &9076866303808680592
 MonoBehaviour:
@@ -213,6 +214,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxTrashCapacity: 200
+--- !u!95 &3895441201981680936
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2135701575239600984}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2a8d2fd0323571146bf65f664973697c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &3714395477460856481
 GameObject:
   m_ObjectHideFlags: 0

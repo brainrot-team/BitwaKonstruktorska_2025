@@ -46,6 +46,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab:
   - {fileID: 2153830779018111169, guid: 602a2b98eba10474c953051892a6989c, type: 3}
+  - {fileID: 2153830779018111169, guid: 4f1514fe9ff77f44fbb760f57c3c4125, type: 3}
+  - {fileID: 2153830779018111169, guid: cea5a80b997bcaf4192ec5b91eaa3423, type: 3}
+  - {fileID: 701942454062615105, guid: 2ab0d6ed2b367a4468e11eb555beff80, type: 3}
+  - {fileID: 2153830779018111169, guid: a3c4efb9d1632f84b87f43640e585219, type: 3}
   spawnDelay: 1
   enemyMaxNumber: 3
   spawnedEnemies: []

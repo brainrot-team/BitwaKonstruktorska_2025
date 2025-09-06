@@ -1,28 +1,10 @@
 fileFormatVersion: 2
-guid: 875277a41006a754e991b5d1b0a31632
+guid: b5d96bc7fd04dc3439ff0ed10ec41de8
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3019424127853119141
-    second: line_0
-  - first:
-      213: -2983801191155921686
-    second: line_1
-  - first:
-      213: 2827070441461746612
-    second: line_2
-  - first:
-      213: -2956027928350987577
-    second: line_3
-  - first:
-      213: 3257298273032107962
-    second: line_4
-  - first:
-      213: 3986553184928412961
-    second: line_5
-  - first:
-      213: 3783279168100775825
-    second: line_6
+      213: 7790341043902755815
+    second: fiat_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -93,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -114,43 +96,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WindowsStoreApps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: line_0
+      name: fiat_0
       rect:
         serializedVersion: 2
-        x: 1
+        x: 0
         y: 0
-        width: 14
-        height: 22
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -159,140 +115,184 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b593219d0c9d816d0800000000000000
-      internalID: -3019424127853119141
+      spriteID: 7e338f887e9dc1c60800000000000000
+      internalID: 7790341043902755815
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: line_1
+      name: fiat_1
       rect:
         serializedVersion: 2
-        x: 17
+        x: 64
         y: 0
-        width: 14
-        height: 22
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: aec83c020a86796d0800000000000000
-      internalID: -2983801191155921686
+      spriteID: aa635444ea6287d46bf6d45879e616e0
+      internalID: 833245621
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: line_2
+      name: fiat_2
       rect:
         serializedVersion: 2
-        x: 33
+        x: 128
         y: 0
-        width: 14
-        height: 22
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 4bb855a8695cb3720800000000000000
-      internalID: 2827070441461746612
+      spriteID: b20507a9e0f99b944905a59157884a88
+      internalID: 1560406544
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: line_3
+      name: fiat_3
       rect:
         serializedVersion: 2
-        x: 49
+        x: 192
         y: 0
-        width: 14
-        height: 22
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 7ca6188c2441af6d0800000000000000
-      internalID: -2956027928350987577
+      spriteID: 34d0d88081b1c93459cbc36af58e3942
+      internalID: 828848881
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: line_4
+      name: fiat_4
       rect:
         serializedVersion: 2
-        x: 65
+        x: 256
         y: 0
-        width: 14
-        height: 22
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: ab7729b758f343d20800000000000000
-      internalID: 3257298273032107962
+      spriteID: cbf33efecab75124da6c3150f7f89e37
+      internalID: 2006658902
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: line_5
+      name: fiat_5
       rect:
         serializedVersion: 2
-        x: 81
+        x: 320
         y: 0
-        width: 14
-        height: 22
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 1253cd10005135730800000000000000
-      internalID: 3986553184928412961
+      spriteID: 2b0fdda60a512784389ea9a2d284e5b5
+      internalID: -1288055808
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: line_6
+      name: fiat_6
       rect:
         serializedVersion: 2
-        x: 97
+        x: 384
         y: 0
-        width: 14
-        height: 22
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 19738c4db58e08430800000000000000
-      internalID: 3783279168100775825
+      spriteID: 4aa97aa56c0f3ec46a2e40d49932658b
+      internalID: -997507131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fiat_7
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0dee51c2d0be1a4d94c32355c448ec3
+      internalID: 909270636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fiat_8
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cee63f6d3abb403468b03bc14a95ea64
+      internalID: 948302837
       vertices: []
       indices: 
       edges: []
@@ -301,7 +301,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 436455aef7d5e6a48b104e5a090f9a86
+    spriteID: 6f9e9685529888c4397cfb64b8b3b07e
     internalID: 0
     vertices: []
     indices: 
@@ -311,13 +311,15 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      line_0: -3019424127853119141
-      line_1: -2983801191155921686
-      line_2: 2827070441461746612
-      line_3: -2956027928350987577
-      line_4: 3257298273032107962
-      line_5: 3986553184928412961
-      line_6: 3783279168100775825
+      fiat_0: 7790341043902755815
+      fiat_1: 833245621
+      fiat_2: 1560406544
+      fiat_3: 828848881
+      fiat_4: 2006658902
+      fiat_5: -1288055808
+      fiat_6: -997507131
+      fiat_7: 909270636
+      fiat_8: 948302837
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -14,6 +14,14 @@ public class EnemyDriveBy : EnemyShooter
     private RaycastHit2D hit3;
     private RaycastHit2D hit4;
 
+    private EnemyData enemyData;
+
+    void Start()
+    {
+        base.Start();
+        enemyData = gameObject.GetComponent<EnemyController>().enemyData;
+    }
+
     void Update()
     {
         if(canShoot)
@@ -55,22 +63,46 @@ public class EnemyDriveBy : EnemyShooter
         hit3 = Physics2D.Raycast(shootPoint3.position, -transform.up,shootDistance,hitLayers);
         hit4 = Physics2D.Raycast(shootPoint4.position, -transform.up,shootDistance,hitLayers);
 
-        if(hit.collider == null && hit2.collider == null && hit3.collider == null && hit4.collider == null)
+        if(canShoot) return;
+        if(hit.collider != null)
         {
-            return;
+            if( hit.collider.gameObject == WorldManager.Instance.playerObject)
+            {
+                canShoot = true;
+                SpawnProjectiles();
+                return;
+            }   
         }
 
-        if(canShoot)
+        if(hit2.collider != null)
         {
-            return;
+            if( hit2.collider.gameObject == WorldManager.Instance.playerObject)
+            {
+                canShoot = true;
+                SpawnProjectiles();
+                return;
+            }
         }
-        if( hit.collider.gameObject == WorldManager.Instance.playerObject ||
-                hit2.collider.gameObject == WorldManager.Instance.playerObject ||
-                hit3.collider.gameObject == WorldManager.Instance.playerObject ||
-                hit4.collider.gameObject == WorldManager.Instance.playerObject)
+
+        if(hit3.collider != null)
         {
-            canShoot = true;
-            SpawnProjectiles();
+            if( hit3.collider.gameObject == WorldManager.Instance.playerObject)
+            {
+                canShoot = true;
+                SpawnProjectiles();
+                return;
+            }
+        }
+
+        if(hit4.collider != null)
+        {
+            if( hit4.collider.gameObject == WorldManager.Instance.playerObject)
+            {
+                canShoot = true;
+                SpawnProjectiles();
+                return;
+
+            }
         }
     }
 
@@ -78,19 +110,19 @@ public class EnemyDriveBy : EnemyShooter
     {
         currentTimeAfterShoot = 0;
         GameObject trashObject = Instantiate(trashBullet, shootPoint1.position, Quaternion.Euler(0, 0, transform.rotation.eulerAngles.z + 90));
-        trashObject.GetComponent<Rigidbody2D>().linearVelocity = Vector2.up * 5;
+        trashObject.GetComponent<Rigidbody2D>().linearVelocity = transform.up * enemyData.bulletSpeed;
         trashObject.GetComponent<TrashProjectile>().ShootProjectile(ProjectileOrigin.Enemy);
 
         GameObject trashObject2 = Instantiate(trashBullet, shootPoint2.position, Quaternion.Euler(0, 0, transform.rotation.eulerAngles.z + 90));
-        trashObject2.GetComponent<Rigidbody2D>().linearVelocity = Vector2.up * 5;
+        trashObject2.GetComponent<Rigidbody2D>().linearVelocity = transform.up * enemyData.bulletSpeed;
         trashObject2.GetComponent<TrashProjectile>().ShootProjectile(ProjectileOrigin.Enemy);
 
         GameObject trashObject3 = Instantiate(trashBullet, shootPoint3.position, Quaternion.Euler(0, 0, transform.rotation.eulerAngles.z - 90));
-        trashObject3.GetComponent<Rigidbody2D>().linearVelocity = Vector2.down * 5;
+        trashObject3.GetComponent<Rigidbody2D>().linearVelocity = -transform.up * enemyData.bulletSpeed;
         trashObject3.GetComponent<TrashProjectile>().ShootProjectile(ProjectileOrigin.Enemy);
 
         GameObject trashObject4 = Instantiate(trashBullet, shootPoint4.position, Quaternion.Euler(0, 0, transform.rotation.eulerAngles.z - 90));
-        trashObject4.GetComponent<Rigidbody2D>().linearVelocity = Vector2.down * 5;
+        trashObject4.GetComponent<Rigidbody2D>().linearVelocity = -transform.up * enemyData.bulletSpeed;
         trashObject4.GetComponent<TrashProjectile>().ShootProjectile(ProjectileOrigin.Enemy);
         shots++;
     }

@@ -83,6 +83,7 @@ public class InputManager : MonoBehaviour
             if (PlayerEnergy.Energy <= 0)
             {
                 GameManager.OnGameOver.Invoke("OUT OF ENERGY!");
+                SoundManager.Instance.PlaySound(SoundEffectType.Lose);
             }
             yield return new WaitForSeconds(energyDecreaseInterval);
         }

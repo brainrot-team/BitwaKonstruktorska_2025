@@ -13,9 +13,14 @@ public class WorldManager : MonoBehaviour
     private int trashScore = 0;
     public int TrashScore {
         get => trashScore;
-        set {
+        set
+        {
             trashScore = value;
             OnTrashScoreChanged.Invoke(trashScore);
+            if (trashScore <= 0)
+            {
+                GameManager.OnGameWon.Invoke();
+            }
         }
     }
 

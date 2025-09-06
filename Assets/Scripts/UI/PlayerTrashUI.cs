@@ -8,6 +8,7 @@ public class PlayerTrashUI : MonoBehaviour
     {
         text = GetComponent<TMPro.TextMeshProUGUI>();
         PlayerTrash.OnNumberOfAttacksChanged.AddListener(UpdateTrashUI);
+        UpdateTrashUI(PlayerTrash.Instance.CollectedTrash);
     }
     
     private void UpdateTrashUI(int newTrash)

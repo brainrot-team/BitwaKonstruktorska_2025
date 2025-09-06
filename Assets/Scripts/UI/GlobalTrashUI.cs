@@ -9,6 +9,7 @@ public class GlobalTrashUI : MonoBehaviour
     {
         text = GetComponent<TextMeshProUGUI>();
         WorldManager.OnTrashScoreChanged.AddListener(UpdateTrashUI);
+        UpdateTrashUI(WorldManager.Instance.TrashScore);
     }
 
     private void UpdateTrashUI(int newTrash)

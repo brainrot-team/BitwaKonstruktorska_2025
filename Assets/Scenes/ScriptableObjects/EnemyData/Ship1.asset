@@ -18,6 +18,6 @@ MonoBehaviour:
   backAngleSpeed: 2
   attackSpeed: 2
   minAttackDistance: 2
-  bulletSpeed: 5
+  bulletSpeed: 10
   minStateDuration: 2
   maxStateDuaration: 4

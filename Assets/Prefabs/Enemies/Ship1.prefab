@@ -137,9 +137,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   shootDistance: 10
-  delayBetween: 0.5
+  delayBetween: 3
   bulletsInSerie: 1
-  reloadTime: 1
+  reloadTime: 3
   minDelay: 60
   maxDelay: 90
 --- !u!95 &5355793776990773046

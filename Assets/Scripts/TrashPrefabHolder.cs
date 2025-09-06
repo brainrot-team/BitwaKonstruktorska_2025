@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class TrashPrefabHolder : MonoBehaviour
 {
-    [SerializeField] List<AnimationClip> animations = new List<AnimationClip> ();
+    [SerializeField] private int numberOfDifferentEnemies = 17;
     [SerializeField] GameObject trashPrefab;
     public GameObject fireEffect;
 
@@ -26,7 +26,7 @@ public class TrashPrefabHolder : MonoBehaviour
     {
         print("BBBBB");
         var inst = Instantiate(trashPrefab);
-        var index = Random.Range(0, animations.Count);
+        var index = Random.Range(0, numberOfDifferentEnemies);
         inst.GetComponent<Animator>().Play($"animation{index+1}");
         return inst;
     }

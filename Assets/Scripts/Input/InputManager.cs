@@ -25,6 +25,8 @@ public class InputManager : MonoBehaviour
     [HideInInspector] public Rigidbody2D rb;
     private Animator animator;
 
+
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -107,5 +109,6 @@ public class InputManager : MonoBehaviour
         print("hit by projectile");
         //PerformShake.instance.TriggerShake(transform.position);
         PlayerEnergy.Energy -= 5;
+        PerformShake.instance.TriggerShake(transform.position);
     }
 }

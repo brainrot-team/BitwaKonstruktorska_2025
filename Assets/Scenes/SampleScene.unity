@@ -7732,6 +7732,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraTransform: {fileID: 1625011334}
   StrengthMultiplier: 0.396
+--- !u!114 &1232836984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1232836980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33a8bf5ba265b3048beb08d113a3def1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerTransform: {fileID: 877900613}
 --- !u!4 &1238125790 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7480845542250498850, guid: f16b039e29d7061478685d217664e3d8, type: 3}

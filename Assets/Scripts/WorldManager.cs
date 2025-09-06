@@ -20,6 +20,7 @@ public class WorldManager : MonoBehaviour
             if (trashScore <= 0)
             {
                 GameManager.OnGameWon.Invoke();
+                SoundManager.Instance.PlaySound3(SoundEffectType.Win);
             }
         }
     }
@@ -108,4 +109,5 @@ public class WorldManager : MonoBehaviour
     {
         return playerObject.transform.position;
     }
+
 }

@@ -2,28 +2,40 @@ using UnityEngine;
 
 public class EnemyShooter : MonoBehaviour
 {
+    [Header("Basics")]
     [SerializeField] private Transform shootPoint;
-    [SerializeField] private GameObject trashBullet;
+    [SerializeField] protected GameObject trashBullet;
 
-    [SerializeField] private LayerMask hitLayers;
-    [SerializeField] private float shootDistance;
+    [SerializeField] protected LayerMask hitLayers;
+    [SerializeField] protected float shootDistance;
 
-    [SerializeField] private float delayBetween = 0.5f;
-    [SerializeField] private int bulletsInSerie = 3;
 
-    [SerializeField] private float reloadTime = 1.0f;
+    [Header("Serie Shot")]
+    [SerializeField] protected float delayBetween = 0.5f;
+    [SerializeField] protected int bulletsInSerie = 3;
 
-    private int shots = 0;
-    private float currentTimeAfterShoot = 0;
-    private float currentTimeAfterSerie = 0;
 
-    private bool canShoot = false;
+    [Header("Delay Next Serie")]
+    [SerializeField] protected float reloadTime = 1.0f;
+
+    [Header("Random Shot")]
+    [SerializeField] protected float minDelay = 10.0f;
+    [SerializeField] protected float maxDelay = 30.0f;
+
+    protected int shots = 0;
+    protected float currentTimeAfterShoot = 0;
+    protected float currentTimeAfterSerie = 0;
+
+    protected float timeToRandomShoot = 0;
+    protected float randomShotTime = 0;
+
+    protected bool canShoot = false;
 
     private RaycastHit2D hit;
 
     void Start()
     {
-
+        randomShotTime = Random.Range(minDelay,maxDelay);
     }
 
     void Update()
@@ -40,11 +52,18 @@ public class EnemyShooter : MonoBehaviour
                 shots = 0;
                 canShoot = false;
                 currentTimeAfterSerie = 0;
+                timeToRandomShoot = 0;
             }
+            return;
         }
         else
         {
             currentTimeAfterSerie += Time.deltaTime;
+            timeToRandomShoot += Time.deltaTime;
+        }
+        if(timeToRandomShoot > randomShotTime)
+        {
+            canShoot = true;
         }
     }
 

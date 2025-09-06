@@ -17,11 +17,13 @@ public class GameOverUI : MonoBehaviour
         GameManager.OnGameOver.AddListener(ShowGameOver);
         retryButton.onClick.AddListener(() =>
         {
+            SoundManager.Instance.PlaySound(SoundEffectType.Click);
             UnityEngine.SceneManagement.SceneManager.LoadScene(
                 UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
         });
         mainMenuButton.onClick.AddListener(() =>
         {
+            SoundManager.Instance.PlaySound(SoundEffectType.Click);
             UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
         });
     }

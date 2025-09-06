@@ -70,8 +70,8 @@ public class TrashProjectile : Trash
 
         isPickUpDisabled = true;
         isLethal = true;
-        Invoke(nameof(EnableCollecting), 20000);
-        Invoke(nameof(DisableLethal), 100000.5f);
+        Invoke(nameof(EnableCollecting), 2);
+        Invoke(nameof(DisableLethal), 1.5f);
         SetOrigin(origin);
 
     }

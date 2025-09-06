@@ -59,7 +59,7 @@ public class TrashDisposer : MonoBehaviour
     {
         while (true)
         {
-            Debug.Log("Dispose Trash!");
+            SoundManager.Instance.PlaySound(SoundEffectType.Load);
             dumpster.ConvertTrashToEnergy();
 
             yield return new WaitForSeconds(disposeInterval);

@@ -70,7 +70,6 @@ public class InputManager : MonoBehaviour
 
     private void ChangePlayerSpeed(int numberOfRemainingAttacks)
     {
-        Debug.Log("gowno");
         currentSpeed = Mathf.Clamp(maxSpeed - numberOfRemainingAttacks * speedDecreasePerAttack, 1, maxSpeed);
     }
 

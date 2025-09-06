@@ -35,6 +35,7 @@ public class PlayerTrash : MonoBehaviour
         {
             CollectedTrash += trashToAdd;
             print("new trash ammount " + collectedTrash);
+            SoundManager.Instance.PlaySound3(SoundEffectType.PickUp);
             return true;
         }
         print("too much trash");

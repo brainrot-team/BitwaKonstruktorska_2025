@@ -285,7 +285,13 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      thrash_animation_ready-4fce_0: 4288447270084838225
+      thrash_animation_ready-4fce_1: -1116262408841248052
+      thrash_animation_ready-4fce_2: -6299114489473494473
+      thrash_animation_ready-4fce_3: -2601735677160461317
+      thrash_animation_ready-4fce_4: -7065997001859192885
+      thrash_animation_ready-4fce_5: -8269715344519988472
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

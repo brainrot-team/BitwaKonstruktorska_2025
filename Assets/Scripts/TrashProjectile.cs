@@ -25,6 +25,11 @@ public class TrashProjectile : Trash
 
     }
 
+    public void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
+
     private void Update()
     {
         if(Mathf.Abs(transform.position.x) > WorldManager.Instance.WorldBounds.x * 0.99 || Mathf.Abs(transform.position.y) > WorldManager.Instance.WorldBounds.y * 0.99)
@@ -42,12 +47,13 @@ public class TrashProjectile : Trash
             case ProjectileOrigin.Player:
                 tag = "PlayerProjectile";
                 targetLayer = LayerMask.NameToLayer("Enemy");
-                rb.excludeLayers = LayerMask.NameToLayer("Player");
+                rb.excludeLayers = 64;
                 break;
             case ProjectileOrigin.Enemy:
                 tag = "EnemyProjectile";
                 targetLayer = LayerMask.NameToLayer("Player");
-                rb.excludeLayers = LayerMask.NameToLayer("Enemy");
+                rb.excludeLayers = 512;
+                print(rb.excludeLayers);
                 break;
             default:
                 Debug.LogError("Unknown ProjectileOrigin: " + origin);
@@ -64,8 +70,8 @@ public class TrashProjectile : Trash
 
         isPickUpDisabled = true;
         isLethal = true;
-        Invoke(nameof(EnableCollecting), 2);
-        Invoke(nameof(DisableLethal), 1.5f);
+        Invoke(nameof(EnableCollecting), 20000);
+        Invoke(nameof(DisableLethal), 100000.5f);
         SetOrigin(origin);
 
     }
@@ -126,12 +132,29 @@ public class TrashProjectile : Trash
             if(collision.collider.TryGetComponent<EnemyController>(out EnemyController enemyController))
             {
                 enemyController.HitByProjectile();
+                print("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
                 
             }
+
+            if (collision.collider.TryGetComponent<PlayerTrash>(out PlayerTrash xxx))
+            {
+                if (PlayerTrash.Instance.AddTrash(trashValue))
+                {
+                    Destroy(gameObject);
+
+                }
+            }
+
 
             if (collision.collider.TryGetComponent<InputManager>(out InputManager inputManager))
             {
                 inputManager.HitByProjectile();
+
+                if (PlayerTrash.Instance.AddTrash(trashValue))
+                {
+                    Destroy(gameObject);
+
+                }
 
             }
 

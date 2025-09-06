@@ -8,7 +8,9 @@ public enum SoundEffectType
     PickUp,
     Load,
     EnemyShoot,
-    Click
+    Click,
+    Win,
+    Lose,
 }
 
 public class SoundManager : MonoBehaviour
@@ -39,6 +41,27 @@ public class SoundManager : MonoBehaviour
         if (source.isPlaying) return;
         source.volume = Random.Range(1f - volumeRange, 1f + volumeRange);
         source.pitch = Random.Range(1f - pitchRange, 1f + pitchRange);
+        source.Play();
+    }
+    public void PlaySound2(SoundEffectType soundEffectType)
+    {
+        if (!levelSoundEffects.ContainsKey(soundEffectType)) return;
+
+        AudioSource source = levelSoundEffects[soundEffectType];
+        if (source.isPlaying) return;
+        source.volume = Random.Range(1f - volumeRange, 1f + volumeRange);
+        source.pitch = Random.Range(0.2f, 0.3f);
+        source.Play();
+    }
+
+    public void PlaySound3(SoundEffectType soundEffectType)
+    {
+        if (!levelSoundEffects.ContainsKey(soundEffectType)) return;
+
+        AudioSource source = levelSoundEffects[soundEffectType];
+        if (source.isPlaying) return;
+        source.volume = Random.Range(1.5f - volumeRange, 1.5f + volumeRange);
+        source.pitch = Random.Range(0.2f, 0.3f);
         source.Play();
     }
 }

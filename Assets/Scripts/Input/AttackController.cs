@@ -43,6 +43,7 @@ public class AttackController : MonoBehaviour
         ProjectileSpawner.Instance.SpawnTrashProjectile(spawnPosition, startVelocity,ProjectileOrigin.Player);
 
         PlayerTrash.Instance.CollectedTrash--;
+        SoundManager.Instance.PlaySound2(SoundEffectType.Shoot);
     }
 
     void OnDrawGizmosSelected()

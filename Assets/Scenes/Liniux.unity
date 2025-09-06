@@ -193,6 +193,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3654878730848759846, guid: 602a2b98eba10474c953051892a6989c, type: 3}
+      propertyPath: delayBetween
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 6325806553015089678, guid: 602a2b98eba10474c953051892a6989c, type: 3}
       propertyPath: m_Radius
       value: 10
@@ -326,7 +330,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20bf594d8652e0e48ba8331aea4cddd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameTime: 100
 --- !u!4 &741565750
 Transform:
   m_ObjectHideFlags: 0

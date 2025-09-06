@@ -11,7 +11,6 @@ public class EnemyViewRange : MonoBehaviour
     {
         if(other.gameObject == WorldManager.Instance.playerObject)
         {
-            Debug.Log("PLAYER DETECT!!!");
             enemyDetected = true;
         } 
     }
@@ -20,7 +19,6 @@ public class EnemyViewRange : MonoBehaviour
     {
         if(other.gameObject == WorldManager.Instance.playerObject)
         {
-            Debug.Log("PLAYER OUT!!!");
             enemyDetected = false;
         } 
     }

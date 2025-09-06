@@ -23,10 +23,12 @@ public class InputManager : MonoBehaviour
 
     public InputSystem_Actions inputActions;
     [HideInInspector] public Rigidbody2D rb;
+    private Animator animator;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
         inputActions = new InputSystem_Actions();
 
         attackController = GetComponent<AttackController>();
@@ -56,6 +58,7 @@ public class InputManager : MonoBehaviour
         if (movementInput.magnitude == 0)
         {
             StopEnergyDepletionCoroutine();
+            animator.SetBool("isDriving", false);
         }
         else
         {
@@ -75,6 +78,7 @@ public class InputManager : MonoBehaviour
 
     private IEnumerator DecreaseEnergy()
     {
+        animator.SetBool("isDriving", true);
         while (true)
         {
             //Debug.Log("Energy Decreased!: " + PlayerEnergy.Energy);

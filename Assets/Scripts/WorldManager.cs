@@ -13,9 +13,14 @@ public class WorldManager : MonoBehaviour
     private int trashScore = 0;
     public int TrashScore {
         get => trashScore;
-        set {
+        set
+        {
             trashScore = value;
             OnTrashScoreChanged.Invoke(trashScore);
+            if (trashScore <= 0)
+            {
+                GameManager.OnGameWon.Invoke();
+            }
         }
     }
 
@@ -51,9 +56,9 @@ public class WorldManager : MonoBehaviour
             float y = UnityEngine.Random.Range(-WorldBounds.x, WorldBounds.x);
 
             int index = Random.Range(0,allTrash.Count);
-            
 
-            var trash = Instantiate(allTrash[index]);
+
+            var trash = TrashPrefabHolder.Instance.getRandomTrash();
             IncreamentTrashScore();
 
 

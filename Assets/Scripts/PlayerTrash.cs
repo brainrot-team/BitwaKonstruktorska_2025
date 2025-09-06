@@ -13,14 +13,13 @@ public class PlayerTrash : MonoBehaviour
     }
     
     
-    [SerializeField] private int collectedTrash = 5;
-    [SerializeField] private int maxTrashCapacity = 200;
+    [SerializeField] private int collectedTrash = 0;
+    [SerializeField] private int maxTrashCapacity = 99;
 
-    public int CollectedTrash
+    [HideInInspector] public int CollectedTrash
     {
         set
         {
-            
             collectedTrash = value;
             collectedTrash = Mathf.Clamp(collectedTrash, 0, int.MaxValue);
             OnNumberOfAttacksChanged.Invoke(collectedTrash);
@@ -31,7 +30,7 @@ public class PlayerTrash : MonoBehaviour
 
     public bool AddTrash(int trashToAdd = 1)
     {
-        if(CollectedTrash + trashToAdd <= maxTrashCapacity)
+        if (CollectedTrash + trashToAdd <= maxTrashCapacity)
         {
             CollectedTrash += trashToAdd;
             print("new trash ammount " + collectedTrash);

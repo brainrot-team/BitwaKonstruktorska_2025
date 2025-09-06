@@ -9,11 +9,11 @@ public class GlobalTrashUI : MonoBehaviour
     {
         text = GetComponent<TextMeshProUGUI>();
         WorldManager.OnTrashScoreChanged.AddListener(UpdateTrashUI);
+        UpdateTrashUI(WorldManager.Instance.TrashScore);
     }
 
     private void UpdateTrashUI(int newTrash)
     {
-        string digits = newTrash.ToString("D2"); // always 2 digits, pad with 0
-        text.text = $"{digits[0]}   {digits[1]}"; // 3 spaces
+        text.text = newTrash.ToString("D4");
     }
 }

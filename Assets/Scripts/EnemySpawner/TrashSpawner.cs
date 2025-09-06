@@ -22,8 +22,8 @@ public class TrashSpawner : MonoBehaviour
 
     public void Spawn()
     {
-        int randIndex = Random.Range(0,TrashPrefab.Count);
-        GameObject enemy =  Instantiate(TrashPrefab[randIndex], transform.position, Quaternion.identity);
+        var prefab = TrashPrefabHolder.Instance.getRandomTrash();
+        GameObject enemy =  Instantiate(TrashPrefabHolder.Instance.getRandomTrash(), transform.position, Quaternion.identity);
         if(trashBin != null)
         {
             enemy.transform.SetParent(trashBin.transform);

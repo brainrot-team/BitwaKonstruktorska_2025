@@ -184,7 +184,7 @@ MonoBehaviour:
   maxSpeed: 30
   speedDecreasePerAttack: 0.6
   startEnergy: 50
-  energyDecreaseInterval: 4
+  energyDecreaseInterval: 0.8
   rb: {fileID: 0}
 --- !u!114 &5522942492387491934
 MonoBehaviour:

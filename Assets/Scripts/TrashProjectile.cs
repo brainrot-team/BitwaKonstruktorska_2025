@@ -14,7 +14,7 @@ public class TrashProjectile : Trash
     
     private Rigidbody2D rb;
     private SpriteRenderer spriteRenderer;
-    private GameObject effect = null;
+    public GameObject effect = null;
 
     private bool isLethal = false;
 
@@ -51,8 +51,10 @@ public class TrashProjectile : Trash
                 targetLayer = LayerMask.NameToLayer("Enemy");
                 rb.excludeLayers = 64;
                 effect = Instantiate(TrashPrefabHolder.Instance.fireEffect);
-                effect.transform.parent = transform;
+                effect.transform.position = Vector3.zero;
+                effect.transform.SetParent(transform, false);
                 
+
 
                 break;
             case ProjectileOrigin.Enemy:

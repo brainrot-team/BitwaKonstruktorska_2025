@@ -20,12 +20,19 @@ public class ProjectileSpawner : MonoBehaviour
         DontDestroyOnLoad(this);
     }
 
-    public void SpawnTrashProjectile(Vector2 trashPosition, Vector2 startVelocity, ProjectileOrigin origin)
+    public void SpawnTrashProjectile(Vector2 trashPosition, Vector2 startVelocity, ProjectileOrigin origin,Transform targetTransorm)
     {
         print("AAAAAAAAAAAAAAAAAAAAAAAAAAA");
-        var projectile = Instantiate(projectilePrefab, trashPosition, Quaternion.identity);
+        var projectile = TrashPrefabHolder.Instance.getRandomTrash();
+            
+         projectile.transform.SetPositionAndRotation( trashPosition, Quaternion.identity);
+
         TrashProjectile trashProjectile = projectile.GetComponent<TrashProjectile>();
         trashProjectile.ShootProjectile(origin);
+        if (trashProjectile.effect != null)
+        {
+            trashProjectile.effect.transform.rotation = targetTransorm.rotation;
+        }
         trashProjectile.GetComponent<Rigidbody2D>().linearVelocity = startVelocity;
     }    
 }

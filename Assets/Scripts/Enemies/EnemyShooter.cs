@@ -92,6 +92,7 @@ public class EnemyShooter : MonoBehaviour
         currentTimeAfterShoot = 0;
         GameObject trashObject = TrashPrefabHolder.Instance.getRandomTrash();
         trashObject.transform.SetPositionAndRotation(shootPoint.position, transform.rotation);
+        
         trashObject.GetComponent<Rigidbody2D>().linearVelocity = transform.right * 5;
         trashObject.GetComponent<TrashProjectile>().ShootProjectile(ProjectileOrigin.Enemy);
         shots++;

@@ -6,7 +6,9 @@ public enum SoundEffectType
     None = 0,
     Shoot,
     PickUp,
-    Load
+    Load,
+    EnemyShoot,
+    Click
 }
 
 public class SoundManager : MonoBehaviour

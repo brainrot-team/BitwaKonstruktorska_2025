@@ -1,4 +1,4 @@
-using System.Numerics;
+
 using UnityEngine;
 
 public enum ProjectileOrigin
@@ -25,6 +25,16 @@ public class TrashProjectile : Trash
 
     }
 
+    private void Update()
+    {
+        if(Mathf.Abs(transform.position.x) > WorldManager.Instance.WorldBounds.x * 0.99 || Mathf.Abs(transform.position.y) > WorldManager.Instance.WorldBounds.y * 0.99)
+        {
+            rb.AddForce((-transform.position).normalized );
+            
+        }
+
+    }
+
     public void SetOrigin(ProjectileOrigin origin)
     {
         switch (origin)
@@ -32,10 +42,12 @@ public class TrashProjectile : Trash
             case ProjectileOrigin.Player:
                 tag = "PlayerProjectile";
                 targetLayer = LayerMask.NameToLayer("Enemy");
+                rb.excludeLayers = LayerMask.NameToLayer("Player");
                 break;
             case ProjectileOrigin.Enemy:
                 tag = "EnemyProjectile";
                 targetLayer = LayerMask.NameToLayer("Player");
+                rb.excludeLayers = LayerMask.NameToLayer("Enemy");
                 break;
             default:
                 Debug.LogError("Unknown ProjectileOrigin: " + origin);
@@ -95,7 +107,7 @@ public class TrashProjectile : Trash
         if (!isPickUpDisabled)
         {
 
-            if (collision.collider.TryGetComponent<InputManager>(out InputManager inputManager))
+            if (collision.collider.TryGetComponent<PlayerTrash>(out PlayerTrash inputManager))
             {
                 if (PlayerTrash.Instance.AddTrash(trashValue))
                 {

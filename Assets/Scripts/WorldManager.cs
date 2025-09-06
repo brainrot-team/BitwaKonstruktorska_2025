@@ -1,3 +1,5 @@
+using NUnit.Framework;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class WorldManager : MonoBehaviour
@@ -7,8 +9,14 @@ public class WorldManager : MonoBehaviour
     public GameObject playerObject;
     
     public int trashScore = 0;
+
+
+
+    [SerializeField] private int startingTrash = 50;
     
     [SerializeField] public Vector2 WorldBounds = new Vector2(4,4);
+
+    [SerializeField] private List<GameObject> allTrash= new List<GameObject>();
 
     private void Awake()
     {
@@ -27,7 +35,24 @@ public class WorldManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        for (int i = 0; i < startingTrash; i++)
+        {
+            
+            float x = UnityEngine.Random.Range(-WorldBounds.x, WorldBounds.x);
+            float y = UnityEngine.Random.Range(-WorldBounds.x, WorldBounds.x);
+
+            int index = Random.Range(0,allTrash.Count);
+            
+
+            var trash = Instantiate(allTrash[index]);
+            IncreamentTrashScore();
+
+
+            trash.transform.position = new Vector3(x,y,0);
+            trash.transform.rotation = Quaternion.Euler(0,0,Random.Range(0,360));
+
+
+        }
 
 
     }

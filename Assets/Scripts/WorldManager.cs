@@ -1,8 +1,10 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class WorldManager : MonoBehaviour
 {
-    public static WorldManager Instance;
+    public static WorldManager Instance { get; private set; }
+    public static UnityEvent<int> OnTrashScoreChanged = new UnityEvent<int>();
 
     public GameObject playerObject;
     
@@ -22,18 +24,6 @@ public class WorldManager : MonoBehaviour
         }
     }
 
-
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-
-
-    }
-
-
-    // Update is called once per frame
     void Update()
     {
         
@@ -50,6 +40,7 @@ public class WorldManager : MonoBehaviour
     public void IncreamentTrashScore()
     {
         trashScore++;
+        OnTrashScoreChanged.Invoke(trashScore);
     }
 
     public bool IsInBox(Vector3 point)

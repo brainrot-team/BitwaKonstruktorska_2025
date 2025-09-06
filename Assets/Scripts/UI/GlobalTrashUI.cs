@@ -8,11 +8,13 @@ public class GlobalTrashUI : MonoBehaviour
     void Start()
     {
         text = GetComponent<TextMeshProUGUI>();
-        GameManager.OnTrashInWorldChanged.AddListener(UpdateTrashUI);
+        WorldManager.OnTrashScoreChanged.AddListener(UpdateTrashUI);
     }
 
     private void UpdateTrashUI(int newTrash)
     {
-        text.text = $"GLOBAL TRASH: {newTrash}";
+        string digits = newTrash.ToString();
+        string spaced = string.Join("   ", digits.ToCharArray());
+        text.text = spaced;
     }
 }

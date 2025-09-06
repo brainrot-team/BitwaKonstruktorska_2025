@@ -12,6 +12,8 @@ public class PlayerTrashUI : MonoBehaviour
     
     private void UpdateTrashUI(int newTrash)
     {
-        text.text = $"TRASH: {newTrash}";
+        string digits = newTrash.ToString();
+        string spaced = string.Join("   ", digits.ToCharArray());
+        text.text = spaced;
     }
 }

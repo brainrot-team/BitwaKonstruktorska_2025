@@ -6,22 +6,6 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get; private set; }
     public static UnityEvent<string> OnGameOver = new UnityEvent<string>();
     public static UnityEvent OnGameWon = new UnityEvent();
-    public static UnityEvent<int> OnTrashInWorldChanged = new UnityEvent<int>();
-
-    private int trashInWorld = 0;
-    public int TrashInWorld
-    {
-        get => trashInWorld;
-        set
-        {
-            trashInWorld = value;
-            OnTrashInWorldChanged.Invoke(trashInWorld);
-            if (trashInWorld <= 0)
-            {
-                OnGameWon.Invoke();
-            }
-        }
-    }
 
     void Awake()
     {
@@ -42,7 +26,5 @@ public class GameManager : MonoBehaviour
     public void ResetGame()
     {
         Time.timeScale = 1f;
-        trashInWorld = 0;
-        OnTrashInWorldChanged.Invoke(trashInWorld);
     }
 }

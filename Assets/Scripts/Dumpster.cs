@@ -11,8 +11,11 @@ public class Dumpster : MonoBehaviour
 
     public void ConvertTrashToEnergy()
     {
-        PlayerTrash.Instance.CollectedTrash--;
-        PlayerEnergy.Energy++;
+        if (PlayerTrash.Instance.CollectedTrash > 0)
+        {
+            PlayerTrash.Instance.CollectedTrash--;
+            PlayerEnergy.Energy++;
+        }
     }
 
     public void OnPlayerEnter()

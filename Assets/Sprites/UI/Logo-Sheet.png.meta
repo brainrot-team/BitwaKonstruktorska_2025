@@ -360,7 +360,16 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Logo-Sheet_0: 3153353519117192650
+      Logo-Sheet_1: 6031759670966402087
+      Logo-Sheet_2: 1202588614057802397
+      Logo-Sheet_3: -646098540509376576
+      Logo-Sheet_4: 3553236317250933874
+      Logo-Sheet_5: -2560480225974360759
+      Logo-Sheet_6: -4684607800424056771
+      Logo-Sheet_7: 7365295511412121207
+      Logo-Sheet_8: -6565409107037966935
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

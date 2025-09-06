@@ -1,4 +1,5 @@
 
+using Unity.VisualScripting;
 using UnityEngine;
 
 public enum ProjectileOrigin
@@ -13,6 +14,7 @@ public class TrashProjectile : Trash
     
     private Rigidbody2D rb;
     private SpriteRenderer spriteRenderer;
+    public GameObject effect = null;
 
     private bool isLethal = false;
 
@@ -48,12 +50,18 @@ public class TrashProjectile : Trash
                 tag = "PlayerProjectile";
                 targetLayer = LayerMask.NameToLayer("Enemy");
                 rb.excludeLayers = 64;
+                effect = Instantiate(TrashPrefabHolder.Instance.fireEffect);
+                effect.transform.position = Vector3.zero;
+                effect.transform.SetParent(transform, false);
+                
+
+
                 break;
             case ProjectileOrigin.Enemy:
                 tag = "EnemyProjectile";
                 targetLayer = LayerMask.NameToLayer("Player");
                 rb.excludeLayers = 512;
-                print(rb.excludeLayers);
+                //print(rb.excludeLayers);
                 break;
             default:
                 Debug.LogError("Unknown ProjectileOrigin: " + origin);
@@ -87,9 +95,11 @@ public class TrashProjectile : Trash
         rb.linearDamping = rb.linearDamping * 2;
         spriteRenderer.color = Color.yellow;
 
+        Destroy(effect);
+
         isLethal = false;
         rb.excludeLayers = 0;
-        print("disabling damage");
+        //print("disabling damage");
     }
 
     public override void OnTriggerEnter2D(Collider2D collision)

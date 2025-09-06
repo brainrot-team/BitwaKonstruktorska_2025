@@ -46,11 +46,11 @@ public class RotateToPlayerState : State
 	{
         base.UpdatePhysics();
 
-        float angle = transform.rotation.eulerAngles.z + (multiplayer *  enemy.enemyData.backAngleSpeed + Time.deltaTime);
+        float angle = transform.rotation.eulerAngles.z + (multiplayer *  enemy.enemyData.angleSpeed + Time.deltaTime);
         transform.rotation = Quaternion.Euler(0,0,angle);
         rb.MovePosition(transform.position + (transform.right * Time.deltaTime * enemy.enemyData.speed));
 
-        if(Vector2.Angle(transform.right,targetPoint - transform.position) < 2.0f)
+        if(Vector2.Angle(transform.right,targetPoint - transform.position) < 20.0f)
         {
             if(enemy.viewRange.GetEnemyDetected())
             {

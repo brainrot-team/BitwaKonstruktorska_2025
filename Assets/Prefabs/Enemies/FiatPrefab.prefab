@@ -197,7 +197,7 @@ MonoBehaviour:
   enemyGameObject: {fileID: 0}
   rb: {fileID: 0}
   viewRange: {fileID: 7934206823581719146}
-  enemyData: {fileID: 11400000, guid: f64e0ce74a783fd4c8fc5a21475688cf, type: 2}
+  enemyData: {fileID: 11400000, guid: 1dc28d109da45cc40b99c3bdbb0b8043, type: 2}
   lastMultiplayer: 0
   currentHealth: 0
 --- !u!114 &6586104800135938712
@@ -217,7 +217,7 @@ MonoBehaviour:
   hitLayers:
     serializedVersion: 2
     m_Bits: 64
-  shootDistance: 5
+  shootDistance: 10
   delayBetween: 1
   bulletsInSerie: 1
   reloadTime: 2

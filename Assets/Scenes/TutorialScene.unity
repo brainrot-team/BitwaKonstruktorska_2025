@@ -119,83 +119,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &78625219
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 774887981991348467, guid: e5ffb1d320daa8f439340df0626c157c, type: 3}
-      propertyPath: playerObject
-      value: 
-      objectReference: {fileID: 586783763}
-    - target: {fileID: 774887981991348467, guid: e5ffb1d320daa8f439340df0626c157c, type: 3}
-      propertyPath: WorldBounds.x
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 774887981991348467, guid: e5ffb1d320daa8f439340df0626c157c, type: 3}
-      propertyPath: WorldBounds.y
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 774887981991348467, guid: e5ffb1d320daa8f439340df0626c157c, type: 3}
-      propertyPath: startingTrash
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 774887981991348467, guid: e5ffb1d320daa8f439340df0626c157c, type: 3}
-      propertyPath: allTrash.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3820788570354945028, guid: e5ffb1d320daa8f439340df0626c157c, type: 3}
-      propertyPath: m_Name
-      value: WorldManager
-      objectReference: {fileID: 0}
-    - target: {fileID: 8479667446575607357, guid: e5ffb1d320daa8f439340df0626c157c, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8479667446575607357, guid: e5ffb1d320daa8f439340df0626c157c, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8479667446575607357, guid: e5ffb1d320daa8f439340df0626c157c, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8479667446575607357, guid: e5ffb1d320daa8f439340df0626c157c, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8479667446575607357, guid: e5ffb1d320daa8f439340df0626c157c, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8479667446575607357, guid: e5ffb1d320daa8f439340df0626c157c, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8479667446575607357, guid: e5ffb1d320daa8f439340df0626c157c, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8479667446575607357, guid: e5ffb1d320daa8f439340df0626c157c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8479667446575607357, guid: e5ffb1d320daa8f439340df0626c157c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8479667446575607357, guid: e5ffb1d320daa8f439340df0626c157c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: e5ffb1d320daa8f439340df0626c157c, type: 3}
 --- !u!1 &205750479
 GameObject:
   m_ObjectHideFlags: 0
@@ -577,10 +500,10 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.574359
+    x: 0
     y: 0
-    width: 1.2945869
-    height: 1.2948328
+    width: 0.9998101
+    height: 1
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 34
@@ -653,11 +576,6 @@ MonoBehaviour:
   m_CropFrameX: 0
   m_CropFrameY: 0
   m_StretchFill: 0
---- !u!1 &586783763 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2135701575239600984, guid: c61c2c44cb4841d4e9726436131bcd3e, type: 3}
-  m_PrefabInstance: {fileID: 2487676090334552008}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -2965,7 +2883,6 @@ SceneRoots:
   - {fileID: 324738801}
   - {fileID: 424881887095531459}
   - {fileID: 604516327502939241}
-  - {fileID: 78625219}
   - {fileID: 621605977}
   - {fileID: 1782333305}
   - {fileID: 1527683022}

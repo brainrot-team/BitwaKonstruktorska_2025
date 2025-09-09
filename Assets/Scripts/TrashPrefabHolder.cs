@@ -24,10 +24,10 @@ public class TrashPrefabHolder : MonoBehaviour
 
     public GameObject getRandomTrash()
     {
-        print("BBBBB");
+
         var inst = Instantiate(trashPrefab);
         var index = Random.Range(0, numberOfDifferentEnemies);
-        inst.GetComponent<Animator>().Play($"animation{index+1}");
+        inst.GetComponent<Animator>().Play($"animation{index + 1}");
         return inst;
     }
 

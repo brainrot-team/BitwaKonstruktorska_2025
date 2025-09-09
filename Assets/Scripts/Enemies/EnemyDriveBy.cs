@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class EnemyDriveBy : EnemyShooter
 {
-    
+
     [SerializeField] protected Transform shootPoint1;
     [SerializeField] protected Transform shootPoint2;
     [SerializeField] protected Transform shootPoint3;
@@ -24,14 +24,14 @@ public class EnemyDriveBy : EnemyShooter
 
     void Update()
     {
-        if(canShoot)
+        if (canShoot)
         {
             this.currentTimeAfterShoot += Time.deltaTime;
-            if(currentTimeAfterShoot > delayBetween)
+            if (currentTimeAfterShoot > delayBetween)
             {
                 SpawnProjectiles();
             }
-            if(shots >= bulletsInSerie)
+            if (shots >= bulletsInSerie)
             {
                 shots = 0;
                 canShoot = false;
@@ -45,7 +45,7 @@ public class EnemyDriveBy : EnemyShooter
             currentTimeAfterSerie += Time.deltaTime;
             timeToRandomShoot += Time.deltaTime;
         }
-        if(timeToRandomShoot > randomShotTime)
+        if (timeToRandomShoot > randomShotTime)
         {
             canShoot = true;
         }
@@ -53,30 +53,20 @@ public class EnemyDriveBy : EnemyShooter
 
     void FixedUpdate()
     {
-        if(currentTimeAfterSerie < reloadTime)
+        if (currentTimeAfterSerie < reloadTime)
         {
             return;
         }
 
-        hit = Physics2D.Raycast(shootPoint1.position, transform.up,shootDistance,hitLayers);
-        hit2 = Physics2D.Raycast(shootPoint2.position, transform.up,shootDistance,hitLayers);
-        hit3 = Physics2D.Raycast(shootPoint3.position, -transform.up,shootDistance,hitLayers);
-        hit4 = Physics2D.Raycast(shootPoint4.position, -transform.up,shootDistance,hitLayers);
+        hit = Physics2D.Raycast(shootPoint1.position, transform.up, shootDistance, hitLayers);
+        hit2 = Physics2D.Raycast(shootPoint2.position, transform.up, shootDistance, hitLayers);
+        hit3 = Physics2D.Raycast(shootPoint3.position, -transform.up, shootDistance, hitLayers);
+        hit4 = Physics2D.Raycast(shootPoint4.position, -transform.up, shootDistance, hitLayers);
 
-        if(canShoot) return;
-        if(hit.collider != null)
+        if (canShoot) return;
+        if (hit.collider != null)
         {
-            if( hit.collider.gameObject == WorldManager.Instance.playerObject)
-            {
-                canShoot = true;
-                SpawnProjectiles();
-                return;
-            }   
-        }
-
-        if(hit2.collider != null)
-        {
-            if( hit2.collider.gameObject == WorldManager.Instance.playerObject)
+            if (hit.collider.gameObject == WorldManager.Instance.playerObject)
             {
                 canShoot = true;
                 SpawnProjectiles();
@@ -84,9 +74,9 @@ public class EnemyDriveBy : EnemyShooter
             }
         }
 
-        if(hit3.collider != null)
+        if (hit2.collider != null)
         {
-            if( hit3.collider.gameObject == WorldManager.Instance.playerObject)
+            if (hit2.collider.gameObject == WorldManager.Instance.playerObject)
             {
                 canShoot = true;
                 SpawnProjectiles();
@@ -94,9 +84,19 @@ public class EnemyDriveBy : EnemyShooter
             }
         }
 
-        if(hit4.collider != null)
+        if (hit3.collider != null)
         {
-            if( hit4.collider.gameObject == WorldManager.Instance.playerObject)
+            if (hit3.collider.gameObject == WorldManager.Instance.playerObject)
+            {
+                canShoot = true;
+                SpawnProjectiles();
+                return;
+            }
+        }
+
+        if (hit4.collider != null)
+        {
+            if (hit4.collider.gameObject == WorldManager.Instance.playerObject)
             {
                 canShoot = true;
                 SpawnProjectiles();
@@ -109,7 +109,8 @@ public class EnemyDriveBy : EnemyShooter
     private void SpawnProjectiles()
     {
         currentTimeAfterShoot = 0;
-        
+        WorldManager.Instance.TrashScore += 4;
+
         GameObject trashObject = TrashPrefabHolder.Instance.getRandomTrash(); ;
         trashObject.transform.SetPositionAndRotation(shootPoint1.position, Quaternion.Euler(0, 0, transform.rotation.eulerAngles.z + 90));
         trashObject.GetComponent<Rigidbody2D>().linearVelocity = transform.up * enemyData.bulletSpeed;
@@ -136,13 +137,13 @@ public class EnemyDriveBy : EnemyShooter
     {
         if (!Application.isPlaying) return;
         if (shootPoint1 == null && shootPoint2 == null && shootPoint3 == null && shootPoint4 == null) return;
-        
+
         Gizmos.color = Color.red;
-        
+
         Gizmos.DrawLine(shootPoint1.position, shootPoint1.position + transform.up * shootDistance);
         Gizmos.DrawLine(shootPoint2.position, shootPoint2.position + transform.up * shootDistance);
         Gizmos.DrawLine(shootPoint3.position, shootPoint3.position + -transform.up * shootDistance);
         Gizmos.DrawLine(shootPoint4.position, shootPoint4.position + -transform.up * shootDistance);
-        
+
     }
 }
